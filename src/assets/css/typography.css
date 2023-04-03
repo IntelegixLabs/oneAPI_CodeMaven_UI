@@ -4,6 +4,7 @@
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
+  color: #313656;
 }
 
 /* Font Inter */
@@ -29,10 +30,6 @@ body {
 
 .font-super-bold {
   font-weight: 800 !important;
-}
-
-.text-theme-red {
-  color: #ff6276;
 }
 
 strong {

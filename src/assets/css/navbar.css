@@ -1,0 +1,86 @@
+.navbar {
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 8px 0 #00000040;
+}
+
+.nav-item {
+  margin-left: 12px;
+}
+
+.nav-item > .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 12px;
+}
+
+.nav-item > .nav-link:hover {
+  color: #cc4e5e;
+  background-color: #ffeff1;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.nav-item > .nav-link.active {
+  color: #cc4e5e;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  background-color: #d6717e;
+  color: #ffffff;
+  margin: 0;
+  border-radius: 0;
+  padding: 16px 14px;
+  text-decoration: none;
+}
+
+.navbar-toggler:hover {
+  background-color: #cc4e5e;
+}
+
+.offcanvas.offcanvas-start {
+  transition: all 0.24s ease-in-out;
+  width: 280px;
+}
+
+.btn-close-offcanvas {
+  border: 0;
+  background-color: transparent;
+  color: #cc4e5e;
+  border-radius: 3px;
+}
+
+.btn-close-offcanvas:hover {
+  background-color: #ffeff1;
+}
+
+.offcanvas-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.offcanvas-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.offcanvas-backdrop.show {
+  backdrop-filter: blur(3px) !important;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.fade {
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
