@@ -20,7 +20,7 @@ export default function Navbar() {
       </span>
       <div
         className="offcanvas offcanvas-start"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel"
       >
@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown" data-bs-dismiss="offcanvas">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -70,7 +70,7 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" data-bs-dismiss="offcanvas">
               <Link
                 className={`nav-link ${
                   location === "/health-analysis" && "active"
@@ -81,7 +81,7 @@ export default function Navbar() {
                 Analysis
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" data-bs-dismiss="offcanvas">
               <Link
                 className={`nav-link ${location === "/about" && "active"}`}
                 to="/about"

@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 import { useStateContext } from "../../../context/ContextProvider.jsx";
+import Navbar from "../../guest/Navbar.jsx";
 
 export default function GuestLayout() {
   const { token } = useStateContext();
@@ -10,5 +11,10 @@ export default function GuestLayout() {
     return <Navigate to="/" />;
   }
 
-  return <Outlet />;
+  return (
+    <React.Fragment>
+      <Navbar />
+      <Outlet />
+    </React.Fragment>
+  );
 }
