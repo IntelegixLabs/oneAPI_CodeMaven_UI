@@ -4,6 +4,7 @@ import GuestLayout from "./components/common/layout/GuestLayout.jsx";
 
 import Home from "./views/guest/Home.jsx";
 import About from "./views/guest/About.jsx";
+import HealthAnalysisComponent from "./components/guest/HealthAnalysisComponent.jsx";
 
 import Error404 from "./views/Error404.jsx";
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/health-analysis",
+        element: <HealthAnalysisComponent />
       }
     ],
   },
