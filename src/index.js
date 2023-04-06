@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../src/assets/css/typography.css";
 import "../src/assets/css/color.css";
 import "../src/assets/css/navbar.css";
+import "../src/assets/css/footer.css";
 import "../src/assets/css/form.css";
 import "../src/assets/css/buttons.css";
 // import "../src/assets/css/animations.css";
