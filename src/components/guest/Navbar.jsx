@@ -39,47 +39,26 @@ export default function Navbar() {
         </div>
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li className="nav-item dropdown" data-bs-dismiss="offcanvas">
-              <a
+            <li className="nav-item dropdown">
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <i className="fa-solid fa-vial-circle-check fa-fw"></i> Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item" data-bs-dismiss="offcanvas">
-              <Link
-                className={`nav-link ${
-                  location === "/health-analysis" && "active"
-                }`}
-                to="health-analysis"
-              >
                 <i className="fa-solid fa-vial-circle-check fa-fw"></i> Health
                 Analysis
               </Link>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link className="dropdown-item" to="health-analysis/heart-attack-risk-predictor">
+                    Heart Attack Risk Predictor
+                  </Link>
+                  <Link className="dropdown-item" to="health-analysis/pneumonia-x-ray-detector">
+                    Pneumonia X Ray Detector
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
               <Link
