@@ -84,3 +84,10 @@
     padding-right: 80px;
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
