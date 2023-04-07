@@ -17,6 +17,7 @@ export default function PneumoniaXRayDetectorComponent() {
   return (
     <React.Fragment>
       <div className="mt-4 container">
+        <h4 className="mb-0 text-muted">Health Analysis</h4>
         <h1 className="font-bold">
           Pneumonia <span className="text-theme-red">X-Ray</span> Detector
         </h1>
@@ -44,7 +45,8 @@ export default function PneumoniaXRayDetectorComponent() {
               ) : (
                 <React.Fragment>
                   <button className="btn btn-success">
-                    <i className="fa-solid fa-magnifying-glass fa-fw"></i> Analyze
+                    <i className="fa-solid fa-magnifying-glass fa-fw"></i>{" "}
+                    Analyze
                   </button>
                   <button className="btn btn-danger" onClick={removeImage}>
                     <i className="fa-solid fa-times fa-fw"></i> Remove
