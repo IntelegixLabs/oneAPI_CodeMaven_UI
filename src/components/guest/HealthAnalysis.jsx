@@ -64,7 +64,11 @@ export default function HealthAnalysis() {
     });
 
     if (healthAnalysisCategory.length > 0) {
-      return <div className="row g-4">{healthAnalysisCategories}</div>;
+      return (
+        <div className="row animated fadeInDown g-4">
+          {healthAnalysisCategories}
+        </div>
+      );
     } else {
       return <div className="text-center">No categories found</div>;
     }
