@@ -44,6 +44,7 @@ export default function ChronicKidneyDisease() {
 
   useEffect(() => {
     index();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const index = () => {

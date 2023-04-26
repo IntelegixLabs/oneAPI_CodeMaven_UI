@@ -51,6 +51,7 @@ export default function BreastCancerPrediction() {
 
   useEffect(() => {
     index();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const index = () => {
