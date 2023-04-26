@@ -7,12 +7,6 @@ export default function HealthAnalysis() {
   const currentRoute = useLocation().pathname;
   const healthAnalysisCategory = [
     {
-      title: "Diabetic Prediction",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      path: "/diabetic-prediction",
-    },
-    {
       title: "Breast Cancer Prediction",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -23,6 +17,12 @@ export default function HealthAnalysis() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       path: "/chronic-kidney-disease",
+    },
+    {
+      title: "Diabetic Prediction",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      path: "/diabetic-prediction",
     },
     {
       title: "Heart Disease",

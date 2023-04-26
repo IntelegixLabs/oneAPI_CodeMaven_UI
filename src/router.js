@@ -61,16 +61,16 @@ const router = createBrowserRouter([
         element: <HealthAnalysis />,
       },
       {
-        path: "/health-analysis/diabetic-prediction",
-        element: <DiabeticPrediction />,
-      },
-      {
         path: "/health-analysis/breast-cancer-prediction",
         element: <BreastCancerPrediction />,
       },
       {
         path: "/health-analysis/chronic-kidney-disease",
         element: <ChronicKidneyDisease />,
+      },
+      {
+        path: "/health-analysis/diabetic-prediction",
+        element: <DiabeticPrediction />,
       },
       {
         path: "/health-analysis/heart-disease",
