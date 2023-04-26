@@ -307,36 +307,39 @@ export default function ChronicKidneyDisease() {
     setIsResultAvailable(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = {
-      age: age,
-      bp: bloodPressure,
-      sg: specificGravity,
-      al: albumin,
-      su: sugar,
-      rbc: redBloodCells,
-      pc: pusCell,
-      pcc: pusCellClumps,
-      ba: bacteria,
-      bgr: bloodGlucoseRandom,
-      bu: bloodUrea,
-      sc: serumCreatinine,
-      sod: sodium,
-      pot: potassium,
-      hemo: hemoglobin,
-      pcv: packedCellVolume,
-      wc: whiteBloodCellCount,
-      rc: redBloodCellCount,
-      htn: hypertension,
-      dm: diabetesMellitus,
-      cad: coronaryArteryDisease,
-      appet: appetite,
-      pe: pedalEdema,
-      ane: anemia,
+      disease: "chronic_kidney",
+      parameters: {
+        age: age,
+        bp: bloodPressure,
+        sg: specificGravity,
+        al: albumin,
+        su: sugar,
+        rbc: redBloodCells,
+        pc: pusCell,
+        pcc: pusCellClumps,
+        ba: bacteria,
+        bgr: bloodGlucoseRandom,
+        bu: bloodUrea,
+        sc: serumCreatinine,
+        sod: sodium,
+        pot: potassium,
+        hemo: hemoglobin,
+        pcv: packedCellVolume,
+        wc: whiteBloodCellCount,
+        rc: redBloodCellCount,
+        htn: hypertension,
+        dm: diabetesMellitus,
+        cad: coronaryArteryDisease,
+        appet: appetite,
+        pe: pedalEdema,
+        ane: anemia,
+      },
     };
 
-    ApiML.post("/kidney_chronic", payload)
+    await ApiML.post("/disease", payload)
       .then((res) => {
         setResult(res.data);
         setIsResultAvailable(true);

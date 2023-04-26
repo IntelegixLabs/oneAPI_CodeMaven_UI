@@ -195,20 +195,23 @@ export default function DiabeticPrediction() {
     setIsResultAvailable(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = {
-      Age: age,
-      Pregnancies: pregnancies,
-      Glucose: glucose,
-      BloodPressure: bloodPressure,
-      SkinThickness: skinThickness,
-      Insulin: insulin,
-      BMI: bmi,
-      DiabetesPedigreeFunction: diabetesPedigreeFunction,
+      disease: "diabetic",
+      parameters: {
+        Age: age,
+        Pregnancies: pregnancies,
+        Glucose: glucose,
+        BloodPressure: bloodPressure,
+        SkinThickness: skinThickness,
+        Insulin: insulin,
+        BMI: bmi,
+        DiabetesPedigreeFunction: diabetesPedigreeFunction,
+      },
     };
 
-    ApiML.post("/diabetic", payload)
+    await ApiML.post("/disease", payload)
       .then((res) => {
         setResult(res.data);
         setIsResultAvailable(true);

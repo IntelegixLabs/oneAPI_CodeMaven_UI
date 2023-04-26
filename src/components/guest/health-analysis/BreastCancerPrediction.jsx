@@ -279,7 +279,7 @@ export default function BreastCancerPrediction() {
   const fillSampleData = (e) => {
     e.preventDefault();
 
-    setFullName("John Doe");
+    setFullName("Jane Doe");
     setAge(22);
     setGender("m");
     setRadiusMean(17.99);
@@ -356,42 +356,45 @@ export default function BreastCancerPrediction() {
     setIsResultAvailable(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = {
-      radius_mean: radiusMean,
-      texture_mean: textureMean,
-      perimeter_mean: perimeterMean,
-      area_mean: areaMean,
-      smoothness_mean: smoothnessMean,
-      compactness_mean: compactnessMean,
-      concavity_mean: concavityMean,
-      concave_points_mean: concavePointsMean,
-      symmetry_mean: symmetryMean,
-      fractal_dimension_mean: fractalDimensionMean,
-      radius_se: radiusSe,
-      texture_se: textureSe,
-      perimeter_se: perimeterSe,
-      area_se: areaSe,
-      smoothness_se: smoothnessSe,
-      compactness_se: compactnessSe,
-      concavity_se: concavitySe,
-      concave_points_se: concavePointsSe,
-      symmetry_se: symmetrySe,
-      fractal_dimension_se: fractalDimensionSe,
-      radius_worst: radiusWorst,
-      texture_worst: textureWorst,
-      perimeter_worst: perimeterWorst,
-      area_worst: areaWorst,
-      smoothness_worst: smoothnessWorst,
-      compactness_worst: compactnessWorst,
-      concavity_worst: concavityWorst,
-      concave_points_worst: concavePointsWorst,
-      symmetry_worst: symmetryWorst,
-      fractal_dimension_worst: fractalDimensionWorst,
+      disease: "breast_cancer",
+      parameters: {
+        radius_mean: radiusMean,
+        texture_mean: textureMean,
+        perimeter_mean: perimeterMean,
+        area_mean: areaMean,
+        smoothness_mean: smoothnessMean,
+        compactness_mean: compactnessMean,
+        concavity_mean: concavityMean,
+        concave_points_mean: concavePointsMean,
+        symmetry_mean: symmetryMean,
+        fractal_dimension_mean: fractalDimensionMean,
+        radius_se: radiusSe,
+        texture_se: textureSe,
+        perimeter_se: perimeterSe,
+        area_se: areaSe,
+        smoothness_se: smoothnessSe,
+        compactness_se: compactnessSe,
+        concavity_se: concavitySe,
+        concave_points_se: concavePointsSe,
+        symmetry_se: symmetrySe,
+        fractal_dimension_se: fractalDimensionSe,
+        radius_worst: radiusWorst,
+        texture_worst: textureWorst,
+        perimeter_worst: perimeterWorst,
+        area_worst: areaWorst,
+        smoothness_worst: smoothnessWorst,
+        compactness_worst: compactnessWorst,
+        concavity_worst: concavityWorst,
+        concave_points_worst: concavePointsWorst,
+        symmetry_worst: symmetryWorst,
+        fractal_dimension_worst: fractalDimensionWorst,
+      },
     };
 
-    ApiML.post("/breast_cancer", payload)
+    await ApiML.post("/disease", payload)
       .then((res) => {
         setResult(res.data);
         setIsResultAvailable(true);

@@ -204,23 +204,26 @@ export default function LiverDisease() {
     setIsResultAvailable(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = {
-      Age: age,
-      Gender_Female: gender === "f" ? 1 : 0,
-      Gender_Male: gender === "m" ? 1 : 0,
-      Total_Bilirubin: totalBilirubin,
-      Direct_Bilirubin: directBilirubin,
-      Alkaline_Phosphotase: alkalinePhosphotase,
-      Alamine_Aminotransferase: alamineAminotransferase,
-      Aspartate_Aminotransferase: aspartateAminotransferase,
-      Total_Protiens: totalProtiens,
-      Albumin: albumin,
-      Albumin_and_Globulin_Ratio: albuminAndGlobulinRatio,
+      disease: "liver_disease",
+      parameters: {
+        Age: age,
+        Gender_Female: gender === "f" ? 1 : 0,
+        Gender_Male: gender === "m" ? 1 : 0,
+        Total_Bilirubin: totalBilirubin,
+        Direct_Bilirubin: directBilirubin,
+        Alkaline_Phosphotase: alkalinePhosphotase,
+        Alamine_Aminotransferase: alamineAminotransferase,
+        Aspartate_Aminotransferase: aspartateAminotransferase,
+        Total_Protiens: totalProtiens,
+        Albumin: albumin,
+        Albumin_and_Globulin_Ratio: albuminAndGlobulinRatio,
+      },
     };
 
-    ApiML.post("/liver_disease", payload)
+    await ApiML.post("/disease", payload)
       .then((res) => {
         setResult(res.data);
         setIsResultAvailable(true);
