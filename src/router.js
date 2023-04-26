@@ -11,6 +11,7 @@ import Study from "./views/guest/ViewStudy.jsx";
 import DiabeticPrediction from "./views/guest/health-analysis/ViewDiabeticPrediction.jsx";
 import BreastCancerPrediction from "./views/guest/health-analysis/ViewBreastCancerPrediction.jsx";
 import ChronicKidneyDisease from "./views/guest/health-analysis/ViewChronicKidneyDisease.jsx";
+import HeartDisease from "./views/guest/health-analysis/ViewHeartDisease.jsx";
 import LiverDisease from "./views/guest/health-analysis/ViewLiverDisease.jsx";
 import HeartAttackRiskPredictor from "./views/guest/health-analysis/ViewHeartAttackRiskPredictor.jsx";
 import PneumoniaXRayDetector from "./views/guest/health-analysis/ViewPneumoniaXRayDetector.jsx";
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/health-analysis/chronic-kidney-disease",
         element: <ChronicKidneyDisease />,
+      },
+      {
+        path: "/health-analysis/heart-disease",
+        element: <HeartDisease />,
       },
       {
         path: "/health-analysis/liver-disease",
