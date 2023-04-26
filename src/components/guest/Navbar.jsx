@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
                 role="button"
@@ -59,6 +59,34 @@ export default function Navbar() {
                   </Link>
                 </li>
               </ul>
+            </li> */}
+            <li className="nav-item" data-bs-dismiss="offcanvas">
+              <Link
+                className={`nav-link ${
+                  (location === "/health-analysis" ||
+                    location === "/health-analysis/diabetic-prediction" ||
+                    location === "/health-analysis/breast-cancer-prediction" ||
+                    location === "/health-analysis/chronic-kidney-disease" ||
+                    location === "/health-analysis/heart-disease" ||
+                    location === "/health-analysis/liver-disease" ||
+                    location ===
+                      "/health-analysis/heart-attack-risk-predictor" ||
+                    location === "/health-analysis/pneumonia-x-ray-detector") &&
+                  "active"
+                }`}
+                to="/health-analysis"
+              >
+                <i className="fa-solid fa-vial-circle-check fa-fw"></i> Health
+                Analysis
+              </Link>
+            </li>
+            <li className="nav-item" data-bs-dismiss="offcanvas">
+              <Link
+                className={`nav-link ${location === "/study" && "active"}`}
+                to="/study"
+              >
+                <i className="fa-solid fa-book fa-fw"></i> Study
+              </Link>
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
               <Link

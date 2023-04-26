@@ -11,7 +11,7 @@ import "../src/assets/css/footer.css";
 import "../src/assets/css/form.css";
 import "../src/assets/css/buttons.css";
 // import "../src/assets/css/animations.css";
-// import "../src/assets/css/card.css";
+import "../src/assets/css/card.css";
 import "../src/assets/css/background-colors.css";
 // import "../src/assets/css/styles.css";
 

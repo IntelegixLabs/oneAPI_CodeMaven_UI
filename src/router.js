@@ -1,13 +1,20 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 // import DefaultLayout from "./components/common/layout/UserLayout.jsx";
 import GuestLayout from "./components/common/layout/GuestLayout.jsx";
 
-import Home from "./views/guest/Home.jsx";
-import About from "./views/guest/About.jsx";
-import HeartAttackRiskPredictor from "./views/guest/HeartAttackRiskPredictor.jsx";
-import PneumoniaXRayDetector from "./views/guest/PneumoniaXRayDetector.jsx";
-
+import Home from "./views/guest/ViewHome.jsx";
+import About from "./views/guest/ViewAbout.jsx";
 import Error404 from "./views/Error404.jsx";
+import HealthAnalysis from "./views/guest/ViewHealthAnalysis.jsx";
+import Study from "./views/guest/ViewStudy.jsx";
+
+import DiabeticPrediction from "./views/guest/health-analysis/ViewDiabeticPrediction.jsx";
+import BreastCancerPrediction from "./views/guest/health-analysis/ViewBreastCancerPrediction.jsx";
+import ChronicKidneyDisease from "./views/guest/health-analysis/ViewChronicKidneyDisease.jsx";
+import LiverDisease from "./views/guest/health-analysis/ViewLiverDisease.jsx";
+import HeartAttackRiskPredictor from "./views/guest/health-analysis/ViewHeartAttackRiskPredictor.jsx";
+import PneumoniaXRayDetector from "./views/guest/health-analysis/ViewPneumoniaXRayDetector.jsx";
+
 
 const router = createBrowserRouter([
   // {
@@ -49,13 +56,37 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/health-analysis",
+        element: <HealthAnalysis />,
+      },
+      {
+        path: "/health-analysis/diabetic-prediction",
+        element: <DiabeticPrediction />,
+      },
+      {
+        path: "/health-analysis/breast-cancer-prediction",
+        element: <BreastCancerPrediction />,
+      },
+      {
+        path: "/health-analysis/chronic-kidney-disease",
+        element: <ChronicKidneyDisease />,
+      },
+      {
+        path: "/health-analysis/liver-disease",
+        element: <LiverDisease />,
+      },
+      {
         path: "/health-analysis/heart-attack-risk-predictor",
-        element: <HeartAttackRiskPredictor />
+        element: <HeartAttackRiskPredictor />,
       },
       {
         path: "/health-analysis/pneumonia-x-ray-detector",
-        element: <PneumoniaXRayDetector />
-      }
+        element: <PneumoniaXRayDetector />,
+      },
+      {
+        path: "/study",
+        element: <Study />,
+      },
     ],
   },
   {

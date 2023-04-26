@@ -1,30 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import HeadImage from "../../assets/images/head-image.png";
 
-export default function HomeComponent() {
-  const [fullName, setFullName] = useState();
-  const [age, setAge] = useState();
-  const [sex, setSex] = useState();
-  const [race, setRace] = useState();
-
-  const [diastolicBP, setDiastolicBP] = useState();
-  const [redBloocCells, setRedBloodCells] = useState();
-  const [sedimantationRate, setSedimantationRate] = useState();
-
-  const [serumAlbumin, setSerumAlbumin] = useState();
-  const [serumCholesterol, setSerumCholesterol] = useState();
-  const [serumIron, setSerumIron] = useState();
-  const [serumMagnesium, setSerumMagnesium] = useState();
-  const [serumProtein, setSerumProtein] = useState();
-
-  const [systolicBP, setSystolicBP] = useState();
-  const [tibc, setTibc] = useState();
-  const [ts, setTs] = useState();
-
-  const [whiteBloodCells, setWhiteBloodCells] = useState();
-  const [bmi, setBmi] = useState();
-  const [pulsePressure, setPulsePressure] = useState();
+export default function Home() {
 
   return (
     <React.Fragment>
@@ -53,7 +31,7 @@ export default function HomeComponent() {
             </p>
           </div>
           <div className="col-md-6">
-            <img className="img-fluid" src={HeadImage} alt="Image" />
+            <img className="img-fluid" src={HeadImage} alt="Home Image" />
           </div>
         </div>
       </div>
