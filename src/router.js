@@ -8,6 +8,7 @@ import Error404 from "./views/Error404.jsx";
 import HealthAnalysis from "./views/guest/ViewHealthAnalysis.jsx";
 import Study from "./views/guest/ViewStudy.jsx";
 
+// Health Analysis Component
 import DiabeticPrediction from "./views/guest/health-analysis/ViewDiabeticPrediction.jsx";
 import BreastCancerPrediction from "./views/guest/health-analysis/ViewBreastCancerPrediction.jsx";
 import ChronicKidneyDisease from "./views/guest/health-analysis/ViewChronicKidneyDisease.jsx";
@@ -16,6 +17,9 @@ import LiverDisease from "./views/guest/health-analysis/ViewLiverDisease.jsx";
 import HeartAttackRiskPredictor from "./views/guest/health-analysis/ViewHeartAttackRiskPredictor.jsx";
 import PneumoniaXRayDetector from "./views/guest/health-analysis/ViewPneumoniaXRayDetector.jsx";
 
+// Study Health Analysis Component
+import ViewStudyHealthAnalysis from "./views/guest/study/ViewStudyHealthAnalysis.jsx";
+import ViewStudyBreastCancer from "./views/guest/study/health-analysis/ViewStudyBreastCancer.jsx";
 
 const router = createBrowserRouter([
   // {
@@ -91,6 +95,14 @@ const router = createBrowserRouter([
       {
         path: "/study",
         element: <Study />,
+      },
+      {
+        path: "/study/health-analysis",
+        element: <ViewStudyHealthAnalysis />,
+      },
+      {
+        path: "/study/health-analysis/breast-cancer",
+        element: <ViewStudyBreastCancer />,
       },
     ],
   },
