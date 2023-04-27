@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HeartAttackRiskPredictorComponent() {
+  const [fullName, setFullName] = useState();
+  const [age, setAge] = useState();
+  const [sex, setSex] = useState();
+  const [race, setRace] = useState();
+
+  const [diastolicBP, setDiastolicBP] = useState();
+  const [redBloocCells, setRedBloodCells] = useState();
+  const [sedimantationRate, setSedimantationRate] = useState();
+
+  const [serumAlbumin, setSerumAlbumin] = useState();
+  const [serumCholesterol, setSerumCholesterol] = useState();
+  const [serumIron, setSerumIron] = useState();
+  const [serumMagnesium, setSerumMagnesium] = useState();
+  const [serumProtein, setSerumProtein] = useState();
+
+  const [systolicBP, setSystolicBP] = useState();
+  const [tibc, setTibc] = useState();
+  const [ts, setTs] = useState();
+
+  const [whiteBloodCells, setWhiteBloodCells] = useState();
+  const [bmi, setBmi] = useState();
+  const [pulsePressure, setPulsePressure] = useState();
+
   return (
     <React.Fragment>
       <div className="mt-4 container">
-        <h4 className="mb-0 text-muted">Health Analysis</h4>
+        <Link to="/health-analysis" className="mb-0 text-muted">
+          <i className="fa-solid fa-arrow-left fa-fw"></i> Back to Health Analysis
+        </Link>
         <h1 className="mt-0 font-bold">
           Heart Attack <span className="text-theme-red">Risk</span> Predictor
         </h1>

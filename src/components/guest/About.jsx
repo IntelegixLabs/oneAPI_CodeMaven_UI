@@ -1,4 +1,4 @@
-export default function AboutComponent() {
+export default function About() {
   return (
     <div className="mt-4 mb-5 mt-sm-5 container">
       <div className="row mx-2 mx-sm-0">

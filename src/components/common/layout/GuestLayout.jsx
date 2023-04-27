@@ -13,10 +13,12 @@ export default function GuestLayout() {
   }
 
   return (
-    <React.Fragment>
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <Outlet />
+      <div className="container-fluid">
+        <Outlet />
+      </div>
       <Footer />
-    </React.Fragment>
+    </div>
   );
 }

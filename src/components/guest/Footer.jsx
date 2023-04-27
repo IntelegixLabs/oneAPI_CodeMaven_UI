@@ -20,13 +20,13 @@ export default function Footer() {
                   <h5 className="font-semi-bold mt-2">Explore</h5>
                   <ul className="foot-menu-links font-semi-bold">
                     <li>
-                      <Link to="/health-analysis/heart-attack-risk-predictor">
-                        Heart Attack Risk Predictor
+                      <Link to="/health-analysis">
+                        Health Analysis
                       </Link>
                     </li>
                     <li>
-                      <Link to="/health-analysis/pneumonia-x-ray-detector">
-                        Pneumonia X Ray Detector
+                      <Link to="/study">
+                        Study
                       </Link>
                     </li>
                   </ul>
@@ -50,19 +50,10 @@ export default function Footer() {
                 <div className="col-md-6 col-sm-6 col-12">
                   <ul className="inline-links text-center text-sm-center text-md-end">
                     <li className="links">
-                      <a className="link" href="<?php echo URLROOT; ?>/faq">
-                        FAQ
-                      </a>
+                      <Link className="link" to="/faq">FAQ</Link>
                     </li>
                     <li className="links">
-                      <a className="link" href="<?php echo URLROOT; ?>/about">
-                        About
-                      </a>
-                    </li>
-                    <li className="links">
-                      <a className="link" href="<?php echo URLROOT; ?>/contact">
-                        Contact
-                      </a>
+                      <Link className="link" to="/about">About</Link>
                     </li>
                   </ul>
                 </div>
