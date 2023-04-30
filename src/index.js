@@ -14,6 +14,7 @@ import "../src/assets/css/animations.css";
 import "../src/assets/css/modal.css";
 import "../src/assets/css/card.css";
 import "../src/assets/css/background-colors.css";
+import "../src/assets/css/miscellaneous.css";
 // import "../src/assets/css/styles.css";
 
 import { RouterProvider } from "react-router-dom";
