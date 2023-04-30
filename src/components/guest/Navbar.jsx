@@ -1,13 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import hitaya from '../../assets/images/hitaya512.png';
+import logo from "../../assets/images/logo512.png";
 
 export default function Navbar() {
   const location = useLocation().pathname;
 
   return (
     <nav className="navbar bg-body-tertiary navbar-expand-md sticky-top">
-          <Link className="navbar-brand ms-2 ms-md-0" to="/"> <img src={hitaya} style={{ width: "32px" }} /> {}
-         {process.env.REACT_APP_NAME}
+      <Link className="navbar-brand ms-2 ms-md-0" to="/">
+        <img
+          src={logo}
+          style={{ width: "32px", marginRight: "4px" }}
+          alt="logo"
+        />
+        {process.env.REACT_APP_NAME}
       </Link>
       <span
         className="navbar-toggler"
