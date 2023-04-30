@@ -6,7 +6,7 @@ export default function StudyHealthAnalysis() {
   const currentRoute = useLocation().pathname;
   const StudyhealthAnalysisCategory = [
     {
-      title: "Breast Cancer Prediction",
+      title: "Breast Cancer",
       path: "/breast-cancer",
     },
   ];
