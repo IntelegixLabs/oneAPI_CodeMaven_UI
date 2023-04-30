@@ -106,7 +106,7 @@ const router = createBrowserRouter([
         element: <ViewStudyBreastCancer />,
       },
       {
-        path: "/study/health-analysis/diabetic",
+        path: "/study/health-analysis/diabetic-disease",
         element: <ViewStudyDiabetic />,
       },
     ],
