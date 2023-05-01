@@ -21,7 +21,7 @@ import PneumoniaXRayDetector from "./views/guest/health-analysis/ViewPneumoniaXR
 import ViewStudyHealthAnalysis from "./views/guest/study/ViewStudyHealthAnalysis.jsx";
 import ViewStudyBreastCancer from "./views/guest/study/health-analysis/ViewStudyBreastCancer.jsx";
 import ViewStudyDiabetic from "./views/guest/study/health-analysis/ViewStudyDiabetic.jsx";
-
+import ViewStudyHeartDisease from "./views/guest/study/health-analysis/ViewStudyHeartDisease.jsx";
 const router = createBrowserRouter([
   // {
   //   path: "/",
@@ -108,6 +108,10 @@ const router = createBrowserRouter([
       {
         path: "/study/health-analysis/diabetic-disease",
         element: <ViewStudyDiabetic />,
+      },
+      {
+        path: "/study/health-analysis/heart-disease",
+        element: <ViewStudyHeartDisease />,
       },
     ],
   },
