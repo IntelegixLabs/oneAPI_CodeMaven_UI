@@ -9,6 +9,7 @@ import CHRONIC_KIDNEY from "../../assets/images/chronic-kidney.png";
 import DIABETES_PREDICTION from "../../assets/images/diabetes.png";
 import HEART_DISEASE from "../../assets/images/heart.png";
 import LIVER_DISEASE from "../../assets/images/liver.png";
+import XRAY from "../../assets/images/x-ray.png";
 
 export default function HealthAnalysis() {
   const currentRoute = useLocation().pathname;
@@ -47,6 +48,13 @@ export default function HealthAnalysis() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       path: "/liver-disease",
+    },
+    {
+      img: XRAY,
+      title: "Chest X-Ray Scan",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      path: "/chest-x-ray-scan",
     },
     {
       title: "Predict Heart Attack",
