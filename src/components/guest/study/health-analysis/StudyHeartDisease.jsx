@@ -1,0 +1,146 @@
+import Diagram from "../../../../assets/images/heart-disease.png";
+import { Fragment } from "react";
+import { Link } from 'react-router-dom';
+
+export default function StudyHeartDisease() {
+  return (
+    <Fragment>
+      <div className="row justify-content-evenly align-content-md-center pt-4">
+        <div className="col-md-6">
+          <h2>What is heart disease?</h2>
+          <p>
+            Heart disease, also known as cardiovascular disease, refers to a group of conditions that affect the heart and blood vessels. These conditions can include coronary artery disease, heart failure, arrhythmias (irregular heartbeats), and valve disorders, among others. 
+          </p> 
+          <p>
+          Heart disease is a major cause of illness and death worldwide, but many types of heart disease can be prevented or managed with lifestyle changes and medical treatment. Risk factors for heart disease include high blood pressure, high cholesterol, smoking, diabetes, obesity, and a family history of heart disease. 
+          </p>
+          <p>
+          Symptoms of heart disease can vary depending on the specific condition, but may include chest pain, shortness of breath, fatigue, and swelling in the legs or ankles.
+          </p>
+        </div>
+        <div className="col-md-2">
+          <img className="img-fluid" src={Diagram} />
+        </div>
+      </div>
+      <div>
+        <p>
+          You can Predict whether you have liver disease or not by providing some inputs in our 
+          <Link to="/health-analysis/liver-disease"> Liver disease </Link> 
+          section.
+        </p>
+        <p>There are few parameter which you need to know, before having any input.</p>
+        <div>
+          <h3>Chest Pain Type </h3>
+          <p>Chest pain type is one of the features that can be used to diagnose heart disease. There are four types of chest pain that are associated with heart disease:</p>
+          <ol>
+            <li>
+              <strong>Typical angina:</strong>
+              This type of chest pain is usually described as a feeling of pressure or tightness in the chest. It can also be accompanied by shortness of breath, sweating, and nausea.
+              </li>
+              <li>
+              <strong>Atypical angina:</strong>
+              This type of chest pain is less severe than typical angina and may be described as a burning or indigestion-like feeling. It can also be accompanied by shortness of breath, sweating, and nausea.
+              </li>
+              <li>
+              <strong>Non-anginal pain:</strong>
+              This type of chest pain is not caused by a lack of blood flow to the heart and may be due to other causes, such as acid reflux or muscle strain.
+              </li>
+              <li>
+              <strong>Asymptomatic:</strong>
+              Some people with heart disease may not experience any chest pain or other symptoms, which can make it difficult to diagnose.
+              </li>
+          </ol>
+          <p>
+            <strong>Note: </strong>
+            It's important to note that chest pain can have many causes, and not all chest pain is related to heart disease. If you're experiencing chest pain or other symptoms, it's important to seek medical attention right away.
+          </p>
+        </div>
+        <div>
+          <h3>Resting Blood Pressure (RBP)</h3>
+          <p>Resting Blood Pressure (RBP) is the pressure of blood on the walls of arteries during the resting phase of the cardiac cycle. In the context of heart disease, RBP is an important indicator of the cardiovascular health of an individual</p>
+          <p>It is measured in millimeters of mercury (mmHg) and is represented as two numbers, systolic and diastolic, separated by a slash. Systolic blood pressure (SBP) is the pressure in the arteries when the heart beats, while diastolic blood pressure (DBP) is the pressure when the heart is at rest between beats. </p>
+          <p>A normal RBP reading is generally considered to be below 120/80 mmHg. High RBP can indicate hypertension or other cardiovascular problems.</p>
+        </div>
+        <div>
+          <h3>Serum Cholestoral</h3>
+          <p>Serum cholesterol is a type of fat found in the blood. In the context of heart disease, high levels of serum cholesterol are associated with an increased risk of developing heart disease and other cardiovascular problems. Elevated levels of serum cholesterol can lead to the formation of plaques in the arteries, which can reduce blood flow to the heart and other organs.</p>
+          <p>To manage heart disease, doctors often recommend monitoring serum cholesterol levels and taking steps to reduce levels if they are too high. This may involve lifestyle changes such as adopting a healthy diet and exercising regularly, as well as medication to lower cholesterol levels. </p>
+        </div>
+        <div>
+          <h3>Fasting Blood Sugar</h3>
+          <p>Fasting blood sugar is the level of glucose in the blood after a period of fasting, usually for at least 8 hours. In the context of heart disease, fasting blood sugar levels can be an important indicator of a person's risk of developing heart disease. </p>
+          <p>High levels of fasting blood sugar are associated with an increased risk of developing diabetes, which in turn can increase the risk of heart disease.</p>
+          <p>It is recommended that fasting blood sugar levels be kept below 100 mg/dL to reduce the risk of heart disease.</p>
+        </div>
+        <div>
+          <h3>Resting Electrocardiographic (ECG)</h3>
+          <p>Resting Electrocardiographic (ECG) in heart disease refers to the electrical activity of the heart recorded while the patient is at rest. It is a non-invasive test that can help diagnose various heart conditions, such as arrhythmias, heart attacks, and abnormalities in the heart's structure.</p>
+          <p>There are three types of resting ECG that are commonly observed in heart disease:</p>
+          <ol>
+            <li>
+              <strong>Normal:</strong>
+              A normal ECG shows a regular heartbeat, with consistent intervals between heartbeats and a consistent pattern of electrical activity.
+              </li>
+              <li>
+              <strong>ST-T wave abnormality:</strong>
+              This ECG pattern shows a deviation from the normal pattern of the ST segment and T wave, indicating possible myocardial ischemia (reduced blood flow to the heart muscle).
+              </li>
+              <li>
+              <strong>Left ventricular hypertrophy:</strong>
+              This ECG pattern shows increased voltage or amplitude of the QRS complex, which indicates an enlarged left ventricle of the heart, which can occur due to conditions like hypertension, aortic stenosis or cardiomyopathy.
+              </li>
+          </ol>
+        </div>
+        <div>
+          <h3>Maximum Heart Rate </h3>
+          <p>In heart disease, Maximum Heart Rate (also known as Maximum Heart Rate Achieved) refers to the highest number of times the heart beats per minute during physical activity or exercise. It is an important measure as it helps to determine a person's cardiovascular fitness level and the intensity of exercise that they can safely undertake.</p>
+          <p>The average Maximum Heart Rate varies based on a person's age and fitness level, with younger individuals typically having a higher Maximum Heart Rate.</p>
+          <p>A general estimate for Maximum Heart Rate can be calculated by subtracting a person's age from 220. For example, the Maximum Heart Rate for a 30-year-old would be approximately 190 beats per minute (220 - 30).</p>
+        </div>
+        <div>
+          <h3>Exercise Induced Angina</h3>
+          <p>Exercise-induced angina is a symptom of heart disease characterized by chest pain or discomfort that occurs during physical activity or exertion.</p>
+          <p>It is caused by reduced blood flow to the heart muscle due to narrowed or blocked arteries, which can result in an insufficient supply of oxygen and nutrients to the heart. When the heart is under stress during exercise, it requires more oxygen and if the blood flow is restricted, it can cause pain or discomfort. </p>
+          <p>Exercise-induced angina can be a warning sign of underlying heart disease and should be evaluated by a doctor.</p>
+        </div>
+        <div>
+          <h3>Old Peak</h3>
+          <p>Old Peak is a term used to describe a decrease in ST segment during exercise compared to baseline, as measured by an electrocardiogram (ECG).  </p>
+          <p>In other words, it refers to the difference between the highest point of the ST segment during exercise and the baseline level. Old Peak is considered to be a marker of ischemia, which is a condition where the blood supply to the heart is reduced, usually due to a narrowing or blockage of the coronary arteries.</p>
+        </div>
+        <div>
+          <h3>Slope</h3>
+          <p>the slope refers to the slope of the ST segment on an electrocardiogram (ECG). The ST segment is a part of the ECG that represents the interval between ventricular depolarization and repolarization. The slope of the ST segment can provide information about the blood supply to the heart and the presence of coronary artery disease.</p>
+          <p>There are three types of slopes: upsloping, downsloping, and flat.</p>
+          <ol>
+            <li>
+              <strong>Upsloping:</strong>
+              Upsloping means that the ST segment is sloping upward from the baseline.
+              </li>
+              <li>
+              <strong>downsloping:</strong>
+              Downsloping means that the ST segment is sloping downward from the baseline.
+              </li>
+              <li>
+              <strong>Flat:</strong>
+              Flat means that the ST segment is horizontal or close to the baseline.
+              </li>
+          </ol>
+          <p><
+            strong>Note:</strong>
+          Upsloping and flat slopes are generally considered non-specific, while downsloping slopes are associated with a higher risk of coronary artery disease.
+          </p>
+        </div>
+        <div>
+          <h3>Number of Major Vessels</h3>
+          <p>Number of Major Vessels typically refers to the number of major blood vessels that supply the heart muscle with blood. These vessels are known as coronary arteries.</p>
+          <p>In a healthy individual, there are usually three main coronary arteries, but sometimes one or more of these arteries may be narrowed or blocked due to a build-up of plaque, a condition known as coronary artery disease.</p>
+        </div>
+        <div>
+          <h3>Thal</h3>
+          <p>Thal or Thalassemia is a genetic blood disorder that affects the production of hemoglobin in the body. In heart disease, Thal refers to a specific type of thalassemia that can be detected through blood tests.</p>
+        </div>
+      </div>
+      </Fragment>
+  )
+}
