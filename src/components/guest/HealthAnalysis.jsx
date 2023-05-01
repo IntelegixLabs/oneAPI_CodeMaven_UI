@@ -78,7 +78,7 @@ export default function HealthAnalysis() {
               )}
               <h4 className="mt-4">{category.title}</h4>
               <p className="text-muted">{category.description}</p>
-              <p className="mt-4 more-btn">
+              <p className="my-2 more-btn">
                 Let's check <i className="fa-solid fa-arrow-right fa-fw"></i>
               </p>
             </Link>
@@ -101,11 +101,11 @@ export default function HealthAnalysis() {
   return (
     <React.Fragment>
       <div className="my-5 container">
-        <h1 className="mb-5 font-bold">
+        <h1 className="mb-4 font-bold">
           Health <span className="text-theme-red">Analysis</span>
         </h1>
 
-        {displayHealthAnalysisCategories()}
+        { displayHealthAnalysisCategories() }
       </div>
     </React.Fragment>
   );
