@@ -100,8 +100,8 @@ export default function HealthAnalysis() {
 
   return (
     <React.Fragment>
-      <div className="my-5 container">
-        <h1 className="mb-4 font-bold">
+      <div className="mt-4 mb-5 container">
+        <h1 className="mb-5 font-bold">
           Health <span className="text-theme-red">Analysis</span>
         </h1>
 
