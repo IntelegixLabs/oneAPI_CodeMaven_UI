@@ -2,7 +2,7 @@ import Diagram from "../../../../assets/images/heart-attack-risk-factors.jpg";
 import { Fragment } from "react";
 import { Link } from 'react-router-dom';
 
-export default function StudyHeartDisease() {
+export default function StudyHeartAttackDisease() {
   return (
     <Fragment>
       <div className="row justify-content-evenly align-content-md-center pt-4">
@@ -18,8 +18,8 @@ export default function StudyHeartDisease() {
       </div>
       <div>
         <p>
-          You can Predict whether you have liver disease or not by providing some inputs in our 
-          <Link to="/health-analysis/liver-disease"> Liver disease </Link> 
+          You can Predict whether you got heart attack or not by providing some inputs in our 
+          <Link to="/health-analysis/heart-attack-risk-predictor"> heart attack risk predictor (HARP)</Link> 
           section.
         </p>
         <p>There are few parameter which you need to know, before having any input.</p>

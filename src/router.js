@@ -23,8 +23,8 @@ import ViewStudyBreastCancer from "./views/guest/study/health-analysis/ViewStudy
 import ViewStudyDiabetic from "./views/guest/study/health-analysis/ViewStudyDiabetic.jsx";
 import ViewStudyHeartDisease from "./views/guest/study/health-analysis/ViewStudyHeartDisease.jsx";
 import ViewChronicKidneyDisease from "./views/guest/study/health-analysis/ViewStudyChronicKidneyDisease.jsx";
-
 import ViewStudyLiverDisease from "./views/guest/study/health-analysis/ViewStudyLiverDisease.jsx";
+import ViewStudyHeartAttackDisease from "./views/guest/study/health-analysis/ViewStudyHeartAttackDisease.jsx";
 
 const router = createBrowserRouter([
   // {
@@ -114,16 +114,20 @@ const router = createBrowserRouter([
         element: <ViewStudyDiabetic />,
       },
       {
-        path: "/study/health-analysis/liver-disease",
-        element: <ViewStudyLiverDisease />,
+        path: "/study/health-analysis/chronic-kidney-disease",
+        element: <ViewChronicKidneyDisease />,
       },
       {
         path: "/study/health-analysis/heart-disease",
         element: <ViewStudyHeartDisease />,
       },
       {
-        path: "/study/health-analysis/chronic-kidney-disease",
-        element: <ViewChronicKidneyDisease />,
+        path: "/study/health-analysis/liver-disease",
+        element: <ViewStudyLiverDisease />,
+      },
+      {
+        path: "/study/health-analysis/heart-attack",
+        element: <ViewStudyHeartAttackDisease />,
       },
     ],
   },
