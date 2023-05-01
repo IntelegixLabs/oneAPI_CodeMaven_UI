@@ -24,8 +24,8 @@ export default function StudyHeartDisease() {
       </div>
       <div>
         <p>
-          You can Predict whether you have liver disease or not by providing some inputs in our 
-          <Link to="/health-analysis/liver-disease"> Liver disease </Link> 
+          You can Predict whether you have heart disease or not by providing some inputs in our 
+          <Link to="/health-analysis/heart-disease"> Heart disease </Link> 
           section.
         </p>
         <p>There are few parameter which you need to know, before having any input.</p>
@@ -126,9 +126,9 @@ export default function StudyHeartDisease() {
               Flat means that the ST segment is horizontal or close to the baseline.
               </li>
           </ol>
-          <p><
-            strong>Note:</strong>
-          Upsloping and flat slopes are generally considered non-specific, while downsloping slopes are associated with a higher risk of coronary artery disease.
+          <p>
+            <strong>Note:</strong>
+            Upsloping and flat slopes are generally considered non-specific, while downsloping slopes are associated with a higher risk of coronary artery disease.
           </p>
         </div>
         <div>

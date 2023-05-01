@@ -25,7 +25,7 @@ export default function StudyChronicKidneyDisease() {
       <div>
         <p>
           You can Predict whether you have liver disease or not by providing some inputs in our 
-          <Link to="/health-analysis/liver-disease"> Liver disease </Link> 
+          <Link to="/health-analysis/chronic-kidney-disease"> Chronic Kidney Disease </Link> 
           section.
         </p>
         <p>There are few parameter which you need to know, before having any input.</p>
