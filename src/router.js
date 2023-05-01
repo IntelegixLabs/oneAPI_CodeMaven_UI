@@ -26,6 +26,7 @@ import ViewChronicKidneyDisease from "./views/guest/study/health-analysis/ViewSt
 import ViewStudyLiverDisease from "./views/guest/study/health-analysis/ViewStudyLiverDisease.jsx";
 import ViewStudyHeartAttackDisease from "./views/guest/study/health-analysis/ViewStudyHeartAttackDisease.jsx";
 
+
 const router = createBrowserRouter([
   // {
   //   path: "/",
