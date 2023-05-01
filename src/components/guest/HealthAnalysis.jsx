@@ -73,7 +73,7 @@ export default function HealthAnalysis() {
                   className="img-fluid mx-auto"
                   src={category.img}
                   style={{ maxWidth: "128px" }}
-                  alt="disease-image"
+                  alt=""
                 />
               )}
               <h4 className="mt-4">{category.title}</h4>
