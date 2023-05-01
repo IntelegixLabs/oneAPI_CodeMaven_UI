@@ -11,7 +11,7 @@ export default function NoPatientDataFound() {
           className="img-fluid mt-4"
           src={NO_PATIENTS_DATA_FOUND}
           style={{ opacity: "0.4", maxWidth: "128px" }}
-          alt="No patients data found"
+          alt=""
         />
         <h4 className="text-muted mb-5" style={{ opacity: "0.4" }}>No patients data found</h4>
       </div>

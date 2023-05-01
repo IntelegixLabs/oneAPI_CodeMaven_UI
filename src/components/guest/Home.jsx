@@ -29,7 +29,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="col-md-6">
-            <img className="img-fluid" src={HeadImage} alt="Home Image" />
+            <img className="img-fluid" src={HeadImage} alt="" />
           </div>
         </div>
       </div>

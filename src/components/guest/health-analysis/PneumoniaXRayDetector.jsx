@@ -24,7 +24,7 @@ export default function PneumoniaXRayDetectorComponent() {
         <div className="my-5 row">
           <div className="col-md-4 offset-md-4">
             {imagePreview && (
-              <img className="img-fluid" src={imagePreview} alt="Crop Image" />
+              <img className="img-fluid" src={imagePreview} alt="" />
             )}
             <div className="my-4 d-grid gap-2">
               <input
