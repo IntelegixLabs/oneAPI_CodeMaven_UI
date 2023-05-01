@@ -66,28 +66,21 @@ export default function HealthAnalysis() {
     let healthAnalysisCategories = healthAnalysisCategory.map(
       (category, index) => {
         return (
-          <div className="col-12 col-sm-6 col-lg-6" key={index}>
-            <Link className="card card-link" to={currentRoute + category.path}>
-              <div className="row">
-                {category.img && (
-                  <div className="col-md-4 py-4 ps-5">
-                    <img
-                      className="img-fluid"
-                      src={category.img}
-                      style={{ maxWidth: "128px" }}
-                      alt="disease-image"
-                    />
-                  </div>
-                )}
-                <div className="col-md-8 card-body mx-3 mx-lg-0">
-                  <h4>{category.title}</h4>
-                  <p className="text-muted">{category.description}</p>
-                  <p className="mt-4 more-btn">
-                    Let's check{" "}
-                    <i className="fa-solid fa-arrow-right fa-fw"></i>
-                  </p>
-                </div>
-              </div>
+          <div className="col-12 col-sm-6 col-lg-3" key={index}>
+            <Link className="card card-link pt-4 pb-2 px-4" to={currentRoute + category.path}>
+              {category.img && (
+                <img
+                  className="img-fluid mx-auto"
+                  src={category.img}
+                  style={{ maxWidth: "128px" }}
+                  alt="disease-image"
+                />
+              )}
+              <h4 className="mt-4">{category.title}</h4>
+              <p className="text-muted">{category.description}</p>
+              <p className="mt-4 more-btn">
+                Let's check <i className="fa-solid fa-arrow-right fa-fw"></i>
+              </p>
             </Link>
           </div>
         );
@@ -97,7 +90,7 @@ export default function HealthAnalysis() {
     if (healthAnalysisCategory.length > 0) {
       return (
         <div className="row animated fadeInDown g-4">
-          {healthAnalysisCategories}
+          { healthAnalysisCategories }
         </div>
       );
     } else {
