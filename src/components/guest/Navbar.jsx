@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../assets/images/logo512.png";
 
 export default function Navbar() {
   const location = useLocation().pathname;
@@ -6,6 +7,11 @@ export default function Navbar() {
   return (
     <nav className="navbar bg-body-tertiary navbar-expand-md sticky-top">
       <Link className="navbar-brand ms-2 ms-md-0" to="/">
+        <img
+          src={logo}
+          style={{ width: "32px", marginRight: "4px" }}
+          alt="logo"
+        />
         {process.env.REACT_APP_NAME}
       </Link>
       <span

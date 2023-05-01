@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { sleep } from "./../../../general-helpers.js";
 
 import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
+import ScreenLoader from "../../common/ScreenLoader.jsx";
 
 export default function HeartDisease() {
   const DB = "heartDiseasePatientsDB";
@@ -32,6 +34,7 @@ export default function HeartDisease() {
   const [isPatientDetailsAvailable, setIsPatientDetailsAvailable] =
     useState(false);
   const [patientDetails, setPatientDetails] = useState({});
+  const [showScreenLoader, setShowScreenLoader] = useState(false);
 
   useEffect(() => {
     index();
@@ -249,12 +252,17 @@ export default function HeartDisease() {
       },
     };
 
+    setShowScreenLoader(true);
+    await sleep(3000);
+
     await ApiML.post("/disease", payload)
       .then((res) => {
+        setShowScreenLoader(false);
         setResult(res.data);
         setIsResultAvailable(true);
       })
       .catch((err) => {
+        setShowScreenLoader(false);
         console.log("Error:", err);
       });
   };
@@ -281,6 +289,7 @@ export default function HeartDisease() {
       >
         <div className="modal-dialog modal-lg modal-dialog-scrollable">
           <div className="modal-content">
+            {showScreenLoader && <ScreenLoader />}
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 <i className="fa-solid fa-user-plus fa-fw"></i> Record new
