@@ -9,6 +9,31 @@ export default function StudyHealthAnalysis() {
       title: "Breast Cancer",
       path: "/breast-cancer",
     },
+
+    {
+      title: "Diabetic Disease",
+      path: "/diabetic-disease",
+    },
+    {
+      title: "Chronic Kidney Disease",
+      path: "/chronic-kidney-disease",
+    },
+    {
+      title: "Heart Disease",
+      path: "/heart-disease",
+    },
+    {
+      title: "Liver Disease",
+      path: "/liver-disease",
+    },
+    {
+      title: "Heart Attack",
+      path: "/heart-attack",
+    },
+    {
+      title: "Pneumonia X-Ray",
+      path: "/Pneumonia-x-ray",
+    }
   ];
   const displayStudyHealthAnalysisCategories = () => {
     let studyhealthAnalysisCategories = StudyhealthAnalysisCategory.map((category, index) => {
