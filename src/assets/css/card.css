@@ -17,17 +17,17 @@
   text-decoration: none;
 }
 
-.card-link > .card-body > .more-btn {
+.card-link .more-btn {
   color: #ff6276;
   margin-bottom: 0;
 }
 
-.card-link > .card-body > .more-btn > i {
+.card-link .more-btn > i {
   transition: all 0.18s ease-in-out;
   visibility: hidden;
 }
 
-.card-link:hover > .card-body > .more-btn > i {
+.card-link:hover .more-btn > i {
   padding-left: 12px;
   visibility: visible;
 }
