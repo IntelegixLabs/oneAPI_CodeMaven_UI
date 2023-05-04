@@ -11,7 +11,6 @@ export default function ChestXRayScan() {
 
   const [result, setResult] = useState("");
   const [isResultAvailable, setIsResultAvailable] = useState(false);
-  const [patients, setPatients] = useState("");
   const [showScreenLoader, setShowScreenLoader] = useState(false);
 
   useEffect(() => {
@@ -230,7 +229,6 @@ export default function ChestXRayScan() {
             </button>
           </span>
         </h1>
-        {patients}
       </div>
     </React.Fragment>
   );
