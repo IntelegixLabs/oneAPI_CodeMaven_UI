@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { sleep } from "../../../general-helpers.js";
 
 import ApiML from "../../../Api/ApiML.js";
-import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
-
-import SAMPLE_DISEASE from "../../../assets/sample-disease/chest-x-ray.png";
 
 export default function ChestXRayScan() {
   const DB = "chestXRayScanPatientsDB";
@@ -51,7 +47,6 @@ export default function ChestXRayScan() {
 
     setIsResultAvailable(false);
     setShowScreenLoader(true);
-    // await sleep(3000);
 
     const config = {
       headers: {
