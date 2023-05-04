@@ -6,6 +6,8 @@ import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
 
+import SAMPLE_DISEASE from "../../../assets/sample-disease/chest-x-ray.png";
+
 export default function ChestXRayScan() {
   const DB = "chestXRayScanPatientsDB";
 
@@ -13,34 +15,32 @@ export default function ChestXRayScan() {
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("");
 
-  const [image, setImage] = useState();
-  const [imagePreview, setImagePreview] = useState();
+  const [image, setImage] = useState("");
+  const [imagePreview, setImagePreview] = useState("");
 
-  const [result, setResult] = useState();
+  const [result, setResult] = useState("");
   const [isResultAvailable, setIsResultAvailable] = useState(false);
   const [patients, setPatients] = useState("");
   const [showScreenLoader, setShowScreenLoader] = useState(false);
+
+  useEffect(() => {
+    if (result.length) {
+      setIsResultAvailable(true);
+      displayDiseases(result);
+    } else {
+      setIsResultAvailable(true);
+    }
+  }, [result]);
 
   const handleImageUpload = (e) => {
     setImage(e.target.files[0]);
     setImagePreview(URL.createObjectURL(e.target.files[0]));
   };
 
-  const fillSampleData = (e) => {
-    e.preventDefault();
-
-    setFullName("John Doe");
-
-    setResult("");
-    setIsResultAvailable(false);
-  };
-
   const resetForm = () => {
-    setImage(null);
-    setImagePreview(null);
-
-    setResult("");
     setIsResultAvailable(false);
+    setImage("");
+    setImagePreview("");
   };
 
   const handleSubmit = async (e) => {
@@ -49,8 +49,9 @@ export default function ChestXRayScan() {
     let formData = new FormData();
     formData.append("file", image);
 
+    setIsResultAvailable(false);
     setShowScreenLoader(true);
-    await sleep(3000);
+    // await sleep(3000);
 
     const config = {
       headers: {
@@ -58,27 +59,41 @@ export default function ChestXRayScan() {
       },
     };
 
-    await ApiML.post("disease/predictImage", formData, config)
+    await ApiML.post("/disease/predictImage", formData, config)
       .then((res) => {
+        if (res.data.length > 0) {
+          setResult(res.data);
+        } else {
+          setResult("");
+        }
+
         setShowScreenLoader(false);
-        setResult(res.data.data);
-        console.log(result);
-        setIsResultAvailable(true);
       })
       .catch((err) => {
         setShowScreenLoader(false);
-        console.log("Error:", err);
       });
   };
 
-  const loadCurrentPatientDetails = (e, patientId) => {
-    e.preventDefault();
+  const displayDiseases = (resultData) => {
+    let d = result.map((r, index) => {
+      return (
+        <div className="col-12 col-md-6" key={index}>
+          <div className="card">
+            <div className="card-body">
+              <img className="img-fluid" src={r[0]} alt="" />
+              <h5 className="mt-2">{r[5]}</h5>
+            </div>
+          </div>
+        </div>
+      );
+    });
 
-    let patientsData = JSON.parse(window.localStorage.getItem(DB));
-    const patientData = patientsData.find((obj) => obj.id === patientId);
-
-    // setPatientDetails(patientData);
-    // setIsPatientDetailsAvailable(true);
+    return (
+      <React.Fragment>
+        <h4 className="mt-4">Disease Predicted as follows:</h4>
+        <div className="row">{d}</div>
+      </React.Fragment>
+    );
   };
 
   return (
@@ -109,7 +124,7 @@ export default function ChestXRayScan() {
             <div className="modal-body">
               <div className="container">
                 {!isResultAvailable && (
-                  <div className="my-5 row">
+                  <div className="row">
                     <div className="col-md-6 offset-md-3">
                       {imagePreview && (
                         <img className="img-fluid" src={imagePreview} alt="" />
@@ -125,7 +140,7 @@ export default function ChestXRayScan() {
                         {!imagePreview && (
                           <label
                             htmlFor="imageFile"
-                            className="btn btn-primary py-2"
+                            className="btn btn-primary my-5"
                             type="button"
                           >
                             Upload an Image
@@ -135,20 +150,59 @@ export default function ChestXRayScan() {
                     </div>
                   </div>
                 )}
+                {isResultAvailable && (
+                  <div className="row my-2">
+                    <div className="col-md-3">
+                      <img className="img-fluid" src={imagePreview} alt="" />
+                    </div>
+                    <div className="col-md-9">
+                      {result.length > 0 && (
+                        <React.Fragment>
+                          <img
+                            className="img-fluid"
+                            src={result[0][7]}
+                            alt="detected-disease"
+                          />
+                          {displayDiseases(result)}
+                        </React.Fragment>
+                      )}
+                      {!result.length && (
+                        <div className="alert bg-faint-blue">
+                          <div className="row">
+                            <div className="col-1">
+                              <h4 className="mt-0">
+                                <i className="fa-solid fa-circle-check text-primary fa-lg fa-fw"></i>
+                              </h4>
+                            </div>
+                            <div className="col-11">
+                              <h4 className="mt-0">No disease detected!</h4>
+                              <p className="text-muted">
+                                Congratulations on your remarkable outcome!
+                              </p>
+                              <p className="text-muted mb-0">
+                                Your commitment to self-care through regular
+                                check-ups, exercise, and a balanced diet has
+                                paid off tremendously.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="modal-footer">
-              <button
-                className="btn btn-warning float-end"
-                onClick={fillSampleData}
-              >
-                <i className="fa-solid fa-fill-drip fa-fw"></i> Fill Sample Data
-              </button>
               <button className="btn btn-secondary" onClick={resetForm}>
                 <i className="fa-regular fa-file fa-fw"></i> Reset
               </button>
               {imagePreview && (
-                <button type="button" className="btn btn-success" onClick={handleSubmit}>
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={handleSubmit}
+                >
                   <i className="fa-solid fa-magnifying-glass fa-fw"></i> Analyze
                 </button>
               )}
