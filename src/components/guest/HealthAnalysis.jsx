@@ -11,6 +11,7 @@ import HEART_DISEASE from "../../assets/images/heart.png";
 import LIVER_DISEASE from "../../assets/images/liver.png";
 import XRAY from "../../assets/images/x-ray.png";
 import SKIN_CANCER from "../../assets/images/skin-cancer.png";
+import PNEUMONIA_X_RAY from "../../assets/images/pneumonia-x-ray.png";
 
 export default function HealthAnalysis() {
   const currentRoute = useLocation().pathname;
@@ -71,6 +72,7 @@ export default function HealthAnalysis() {
     //   path: "/heart-attack-risk-predictor",
     // },
     {
+      img: PNEUMONIA_X_RAY,
       title: "Detect Pneumonia X-Ray",
       description:
         "An x-ray exam will allow your doctor to see your lungs, heart and blood vessels to help determine if you have pneumonia",
