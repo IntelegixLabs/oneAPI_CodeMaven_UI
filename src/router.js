@@ -8,6 +8,7 @@ import Error404 from "./views/Error404.jsx";
 import HealthAnalysis from "./views/guest/ViewHealthAnalysis.jsx";
 import Study from "./views/guest/ViewStudy.jsx";
 
+// Health Analysis Component
 import DiabeticPrediction from "./views/guest/health-analysis/ViewDiabeticPrediction.jsx";
 import BreastCancerPrediction from "./views/guest/health-analysis/ViewBreastCancerPrediction.jsx";
 import ChronicKidneyDisease from "./views/guest/health-analysis/ViewChronicKidneyDisease.jsx";
@@ -16,6 +17,15 @@ import LiverDisease from "./views/guest/health-analysis/ViewLiverDisease.jsx";
 import ChestXRayScan from "./views/guest/health-analysis/ViewChestXRayScan.jsx";
 import HeartAttackRiskPredictor from "./views/guest/health-analysis/ViewHeartAttackRiskPredictor.jsx";
 import PneumoniaXRayDetector from "./views/guest/health-analysis/ViewPneumoniaXRayDetector.jsx";
+
+// Study Health Analysis Component
+import ViewStudyHealthAnalysis from "./views/guest/study/ViewStudyHealthAnalysis.jsx";
+import ViewStudyBreastCancer from "./views/guest/study/health-analysis/ViewStudyBreastCancer.jsx";
+import ViewStudyDiabetic from "./views/guest/study/health-analysis/ViewStudyDiabetic.jsx";
+import ViewStudyHeartDisease from "./views/guest/study/health-analysis/ViewStudyHeartDisease.jsx";
+import ViewChronicKidneyDisease from "./views/guest/study/health-analysis/ViewStudyChronicKidneyDisease.jsx";
+import ViewStudyLiverDisease from "./views/guest/study/health-analysis/ViewStudyLiverDisease.jsx";
+import ViewStudyHeartAttackDisease from "./views/guest/study/health-analysis/ViewStudyHeartAttackDisease.jsx";
 
 
 const router = createBrowserRouter([
@@ -96,6 +106,34 @@ const router = createBrowserRouter([
       {
         path: "/study",
         element: <Study />,
+      },
+      {
+        path: "/study/health-analysis",
+        element: <ViewStudyHealthAnalysis />,
+      },
+      {
+        path: "/study/health-analysis/breast-cancer",
+        element: <ViewStudyBreastCancer />,
+      },
+      {
+        path: "/study/health-analysis/diabetic-disease",
+        element: <ViewStudyDiabetic />,
+      },
+      {
+        path: "/study/health-analysis/chronic-kidney-disease",
+        element: <ViewChronicKidneyDisease />,
+      },
+      {
+        path: "/study/health-analysis/heart-disease",
+        element: <ViewStudyHeartDisease />,
+      },
+      {
+        path: "/study/health-analysis/liver-disease",
+        element: <ViewStudyLiverDisease />,
+      },
+      {
+        path: "/study/health-analysis/heart-attack",
+        element: <ViewStudyHeartAttackDisease />,
       },
     ],
   },
