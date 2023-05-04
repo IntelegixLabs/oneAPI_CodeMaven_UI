@@ -56,12 +56,12 @@ export default function HealthAnalysis() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       path: "/chest-x-ray-scan",
     },
-    {
-      title: "Predict Heart Attack",
-      description:
-        "The major risk factors for heart disease include high blood pressure, raised blood cholesterol, diabetes, smoking and obesity.",
-      path: "/heart-attack-risk-predictor",
-    },
+    // {
+    //   title: "Predict Heart Attack",
+    //   description:
+    //     "The major risk factors for heart disease include high blood pressure, raised blood cholesterol, diabetes, smoking and obesity.",
+    //   path: "/heart-attack-risk-predictor",
+    // },
     {
       title: "Detect Pneumonia X-Ray",
       description:
