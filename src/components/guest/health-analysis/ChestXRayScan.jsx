@@ -5,11 +5,6 @@ import ApiML from "../../../Api/ApiML.js";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
 
 export default function ChestXRayScan() {
-  const DB = "chestXRayScanPatientsDB";
-
-  const [fullName, setFullName] = useState("");
-  const [age, setAge] = useState(0);
-  const [gender, setGender] = useState("");
 
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
@@ -70,7 +65,7 @@ export default function ChestXRayScan() {
   };
 
   const displayDiseases = (resultData) => {
-    let d = result.map((r, index) => {
+    let d = resultData.map((r, index) => {
       return (
         <div className="col-12 col-md-6" key={index}>
           <div className="card">
