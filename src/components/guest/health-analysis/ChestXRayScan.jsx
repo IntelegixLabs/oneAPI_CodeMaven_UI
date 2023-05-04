@@ -48,7 +48,7 @@ export default function ChestXRayScan() {
       },
     };
 
-    await ApiML.post("/disease/predictImage", formData, config)
+      await ApiML.post("/disease/chext_xray", formData, config)
       .then((res) => {
         if (res.data.length > 0) {
           setResult(res.data);
