@@ -5,21 +5,20 @@ import ApiML from "../../../Api/ApiML.js";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
 
 export default function ChestXRayScan() {
-
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState([]);
   const [isResultAvailable, setIsResultAvailable] = useState(false);
   const [showScreenLoader, setShowScreenLoader] = useState(false);
 
   useEffect(() => {
     if (result.length) {
-      setIsResultAvailable(true);
       displayDiseases(result);
-    } else {
-      setIsResultAvailable(true);
     }
+
+    setIsResultAvailable(true);
+
   }, [result]);
 
   const handleImageUpload = (e) => {
@@ -48,12 +47,12 @@ export default function ChestXRayScan() {
       },
     };
 
-      await ApiML.post("/disease/chest_xray", formData, config)
+    await ApiML.post("/disease/chest_xray", formData, config)
       .then((res) => {
         if (res.data.length > 0) {
           setResult(res.data);
         } else {
-          setResult("");
+          setResult([]);
         }
 
         setShowScreenLoader(false);
