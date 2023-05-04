@@ -12,7 +12,7 @@ const ApiML = axios.create({
 // };
 
 //All request will wait 5 seconds before timeout
-ApiML.defaults.timeout = 5000;
+// ApiML.defaults.timeout = 5000;
 
 // ApiML.defaults.withCredentials = true;
 
