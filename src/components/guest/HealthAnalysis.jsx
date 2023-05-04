@@ -10,6 +10,7 @@ import DIABETES_PREDICTION from "../../assets/images/diabetes.png";
 import HEART_DISEASE from "../../assets/images/heart.png";
 import LIVER_DISEASE from "../../assets/images/liver.png";
 import XRAY from "../../assets/images/x-ray.png";
+import SKIN_CANCER from "../../assets/images/skin-cancer.png";
 
 export default function HealthAnalysis() {
   const currentRoute = useLocation().pathname;
@@ -55,6 +56,13 @@ export default function HealthAnalysis() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       path: "/chest-x-ray-scan",
+    },
+    {
+      img: SKIN_CANCER,
+      title: "Skin Cancer",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      path: "/skin-cancer",
     },
     // {
     //   title: "Predict Heart Attack",
