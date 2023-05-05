@@ -8,7 +8,6 @@ export default function CardLink({ children, title, description, to="#", btnText
         { children }
         <h4>{title}</h4>
         <p className="text-muted">{description}</p>
-
         <p className="mt-4 more-btn">{btnText} <i className="fa-solid fa-arrow-right fa-fw"></i></p>
       </div>
     </Link>
