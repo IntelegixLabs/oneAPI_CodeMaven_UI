@@ -20,49 +20,49 @@ export default function HealthAnalysis() {
       img: BREAST_CANCER,
       title: "Breast Cancer Prediction",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of Breast Cancer.",
       path: "/breast-cancer-prediction",
     },
     {
       img: CHRONIC_KIDNEY,
       title: "Chronic Kidney Disease",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of Kidney Disease.",
       path: "/chronic-kidney-disease",
     },
     {
       img: DIABETES_PREDICTION,
       title: "Diabetic Prediction",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of Diabetes.",
       path: "/diabetic-prediction",
     },
     {
       img: HEART_DISEASE,
       title: "Heart Disease",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of Heart Disease.",
       path: "/heart-disease",
     },
     {
       img: LIVER_DISEASE,
       title: "Liver Disease",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of Liver Disease.",
       path: "/liver-disease",
     },
     {
       img: XRAY,
       title: "Chest X-Ray Scan",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of diease from Chest-Xray Scans.",
       path: "/chest-x-ray-scan",
     },
     {
       img: SKIN_CANCER,
       title: "Skin Cancer",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Use ML to Predict the chances of skin Cancer.",
       path: "/skin-cancer",
     },
     // {
@@ -75,7 +75,7 @@ export default function HealthAnalysis() {
       img: PNEUMONIA_X_RAY,
       title: "Detect Pneumonia X-Ray",
       description:
-        "An x-ray exam will allow your doctor to see your lungs, heart and blood vessels to help determine if you have pneumonia",
+        "Use ML to Predict the chances of Pneumonia from Chest-Xray.",
       path: "/pneumonia-x-ray-detector",
     },
   ];
