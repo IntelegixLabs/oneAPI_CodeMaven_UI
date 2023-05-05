@@ -6,7 +6,7 @@ import Home from "./views/guest/ViewHome.jsx";
 import About from "./views/guest/ViewAbout.jsx";
 import Error404 from "./views/Error404.jsx";
 import HealthAnalysis from "./views/guest/ViewHealthAnalysis.jsx";
-import Study from "./views/guest/ViewStudy.jsx";
+import StudyBase from "./views/guest/ViewStudyBase.jsx";
 
 // Health Analysis Component
 import DiabeticPrediction from "./views/guest/health-analysis/ViewDiabeticPrediction.jsx";
@@ -110,7 +110,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/study",
-        element: <Study />,
+        element: <StudyBase />,
       },
       {
         path: "/study/health-analysis",
