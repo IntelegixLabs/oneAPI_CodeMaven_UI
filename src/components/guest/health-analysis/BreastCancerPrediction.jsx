@@ -11,7 +11,7 @@ export default function BreastCancerPrediction() {
 
   const [fullName, setFullName] = useState("");
   const [age, setAge] = useState(0);
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("f");
 
   const [radiusMean, setRadiusMean] = useState(0);
   const [textureMean, setTextureMean] = useState(0);
@@ -285,7 +285,7 @@ export default function BreastCancerPrediction() {
 
     setFullName("Jane Doe");
     setAge(22);
-    setGender("m");
+    setGender("f");
     setRadiusMean(17.99);
     setTextureMean(10.38);
     setPerimeterMean(122.8);
@@ -324,7 +324,7 @@ export default function BreastCancerPrediction() {
   const resetForm = () => {
     setFullName("");
     setAge("");
-    setGender("");
+    setGender("f");
     setRadiusMean("");
     setTextureMean("");
     setPerimeterMean("");
@@ -435,7 +435,7 @@ export default function BreastCancerPrediction() {
       >
         <div className="modal-dialog modal-lg modal-dialog-scrollable">
           <div className="modal-content">
-            { showScreenLoader && <ScreenLoader /> }
+            {showScreenLoader && <ScreenLoader />}
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 <i className="fa-solid fa-user-plus fa-fw"></i> Record new
@@ -490,12 +490,11 @@ export default function BreastCancerPrediction() {
                           name="gender"
                           value={gender}
                           onChange={(e) => handleInputChange(e)}
+                          disabled
                         >
-                          <option value="" defaultValue disabled>
-                            Select Gender
+                          <option value="f" defaultValue>
+                            Female
                           </option>
-                          <option value="m">Male</option>
-                          <option value="f">Female</option>
                         </select>
                       </div>
                     </div>
