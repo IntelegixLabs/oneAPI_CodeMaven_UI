@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function PneumoniaXRayDetectorComponent() {
   const [image, setImage] = useState();
@@ -16,9 +17,12 @@ export default function PneumoniaXRayDetectorComponent() {
 
   return (
     <React.Fragment>
-      <div className="mt-4 container">
-        <h4 className="mb-0 text-muted">Health Analysis</h4>
-        <h1 className="font-bold">
+      <div className="mt-3 container">
+        <Link to="/health-analysis" className="mb-0 text-muted">
+          <i className="fa-solid fa-arrow-left fa-fw"></i> Back to Health
+          Analysis
+        </Link>
+        <h1 className="mt-2 font-bold">
           Pneumonia <span className="text-theme-red">X-Ray</span> Detector
         </h1>
         <div className="my-5 row">
