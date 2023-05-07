@@ -54,7 +54,7 @@ export default function StudyBreastCancer() {
           </p>
         </div>
         <div className="col-md-5">
-          <img className="img-fluid" src={FemaleBreastDiagram} />
+          <img className="img-fluid" src={FemaleBreastDiagram} alt="" />
         </div>
       </div>
 

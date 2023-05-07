@@ -1,5 +1,4 @@
 import DiabeticDiagram from "../../../../assets/images/Diabetes.jpeg";
-import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 export default function StudyDiabetic() {
@@ -41,7 +40,7 @@ export default function StudyDiabetic() {
 
       <div className="row">
         <div className="col-12 col-md-6 offset-md-3">
-          <img className="img-fluid" src={DiabeticDiagram} />
+          <img className="img-fluid" src={DiabeticDiagram} alt="" />
         </div>
       </div>
 
