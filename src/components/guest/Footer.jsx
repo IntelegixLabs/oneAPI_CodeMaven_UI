@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LOGO from "../../assets/images/logo512.png";
 
 export default function Footer() {
   return (
@@ -10,6 +11,11 @@ export default function Footer() {
             <div className="container">
               <div className="row">
                 <div className="col-md-4 text-center text-sm-center text-md-start">
+                  <img
+                    src={LOGO}
+                    style={{ width: "80px", marginRight: "auto", marginLeft: "auto" }}
+                    alt="logo"
+                  />
                   <h3 className="font-bold">{process.env.REACT_APP_NAME}</h3>
                   <p className="p-small">We Can. We Could. We Will.</p>
                   <p className="p-small text-left">
@@ -20,14 +26,10 @@ export default function Footer() {
                   <h5 className="font-semi-bold mt-2">Explore</h5>
                   <ul className="foot-menu-links font-semi-bold">
                     <li>
-                      <Link to="/health-analysis">
-                        Health Analysis
-                      </Link>
+                      <Link to="/health-analysis">Health Analysis</Link>
                     </li>
                     <li>
-                      <Link to="/study">
-                        Study
-                      </Link>
+                      <Link to="/study">Study</Link>
                     </li>
                   </ul>
                 </div>
@@ -50,10 +52,14 @@ export default function Footer() {
                 <div className="col-md-6 col-sm-6 col-12">
                   <ul className="inline-links text-center text-sm-center text-md-end">
                     <li className="links">
-                      <Link className="link" to="/faq">FAQ</Link>
+                      <Link className="link" to="/faq">
+                        FAQ
+                      </Link>
                     </li>
                     <li className="links">
-                      <Link className="link" to="/about">About</Link>
+                      <Link className="link" to="/about">
+                        About
+                      </Link>
                     </li>
                   </ul>
                 </div>
