@@ -4,23 +4,32 @@ import LOGO from "../../assets/images/logo512.png";
 export default function Footer() {
   return (
     <footer className="mt-auto bg-grey">
-      <div className="container-fluid">
-        <br />
+      <div className="mt-5 container-fluid">
         <div className="row">
           <div className="col-md-12">
             <div className="container">
               <div className="row">
                 <div className="col-md-4 text-center text-sm-center text-md-start">
-                  <img
-                    src={LOGO}
-                    style={{ width: "80px", marginRight: "auto", marginLeft: "auto" }}
-                    alt="logo"
-                  />
-                  <h3 className="font-bold">{process.env.REACT_APP_NAME}</h3>
-                  <p className="p-small">We Can. We Could. We Will.</p>
-                  <p className="p-small text-left">
-                    Made with <i className="fa fa-heart fa-fw"></i> in India.
-                  </p>
+                  <div className="row">
+                    <div className="col-md-3">
+                      <img
+                        src={LOGO}
+                        class="img-fluid"
+                        style={{
+                          maxWidth: "84px",
+                          marginRight: "auto",
+                          marginLeft: "auto",
+                        }}
+                        alt="logo"
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <h3 className="font-bold mt-2">
+                        {process.env.REACT_APP_NAME}
+                      </h3>
+                      <p className="p-small">We Can. We Could. We Will.</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="col-md-5 text-center text-sm-center text-md-start">
                   <h5 className="font-semi-bold mt-2">Explore</h5>
@@ -39,7 +48,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="row mt-4 mb-3">
+        <div className="row mt-5 mb-3">
           <div className="col-md-12">
             <div className="container">
               <div className="row">
