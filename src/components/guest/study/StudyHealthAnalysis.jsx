@@ -39,7 +39,7 @@ export default function StudyHealthAnalysis() {
     let studyhealthAnalysisCategories = StudyhealthAnalysisCategory.map(
       (category, index) => {
         return (
-          <div className="col-12 col-sm-6 col-lg-4" key={index}>
+          <div className="col-12 col-sm-6 col-lg-3" key={index}>
             <CardLink
               to={currentRoute + category.path}
               title={category.title}
