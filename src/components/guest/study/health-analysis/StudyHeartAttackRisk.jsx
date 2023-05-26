@@ -6,7 +6,7 @@ export default function StudyHeartAttackDisease() {
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
         <div className="col-md-8">
-          <h1 class="font-bold">Heart Attack Risk</h1>
+          <h1 className="font-bold">Heart Attack Risk</h1>
           <p>
             Heart attack risk refers to the likelihood of experiencing a heart
             attack, which occurs when blood flow to the heart is blocked,

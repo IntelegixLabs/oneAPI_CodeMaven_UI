@@ -6,7 +6,7 @@ export default function StudyHeartDisease() {
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
         <div className="col-md-8">
-          <h1 class="font-bold">Heart Disease</h1>
+          <h1 className="font-bold">Heart Disease</h1>
           <p>
             Heart disease, also known as cardiovascular disease, refers to a
             group of conditions that affect the heart and blood vessels. These
@@ -119,7 +119,7 @@ export default function StudyHeartDisease() {
             cholesterol levels.{" "}
           </p>
 
-          <h3 class="mt-5">Fasting Blood Sugar</h3>
+          <h3 className="mt-5">Fasting Blood Sugar</h3>
           <p>
             Fasting blood sugar is the level of glucose in the blood after a
             period of fasting, usually for at least 8 hours. In the context of

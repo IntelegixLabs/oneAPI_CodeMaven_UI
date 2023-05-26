@@ -14,7 +14,7 @@ export default function Footer() {
                     <div className="col-md-3">
                       <img
                         src={LOGO}
-                        class="img-fluid"
+                        className="img-fluid"
                         style={{
                           maxWidth: "84px",
                           marginRight: "auto",

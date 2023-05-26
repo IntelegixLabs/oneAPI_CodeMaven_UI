@@ -28,7 +28,7 @@ export default function Study() {
             btnText="Read Out"
           >
             <h1 className="mb-4">
-              <i class="fa-solid fa-stethoscope fa-fw"></i>
+              <i className="fa-solid fa-stethoscope fa-fw"></i>
             </h1>
           </CardLink>
         </div>

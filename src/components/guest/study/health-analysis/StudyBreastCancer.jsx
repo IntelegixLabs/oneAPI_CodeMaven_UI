@@ -5,7 +5,7 @@ import FemaleBreastDiagram from "../../../../assets/images/female-breast-diagram
 export default function StudyBreastCancer() {
   return (
     <div className="mt-4 mb-5 container animated fadeInRight">
-      <h1 class="font-bold">Breast Cancer</h1>
+      <h1 className="font-bold">Breast Cancer</h1>
       <div className="row">
         <div className="col-md-7 text-muted">
           <p className="mt-2">

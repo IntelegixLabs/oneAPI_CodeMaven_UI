@@ -6,7 +6,7 @@ export default function StudyLiverDisease() {
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
         <div className="col-md-10">
-          <h1 class="font-bold">Liver Disease</h1>
+          <h1 className="font-bold">Liver Disease</h1>
 
           <div className="mt-4 row">
             <div className="col-md-8">

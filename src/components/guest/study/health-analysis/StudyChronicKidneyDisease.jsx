@@ -6,7 +6,7 @@ export default function StudyChronicKidneyDisease() {
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
         <div className="col-md-8">
-          <h1 class="font-bold">Chronic Kidney Disease</h1>
+          <h1 className="font-bold">Chronic Kidney Disease</h1>
           <p>
             Chronic Kidney Disease (CKD) is a long-term and progressive
             condition in which the kidneys gradually lose their function over
