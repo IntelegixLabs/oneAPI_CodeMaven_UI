@@ -325,9 +325,18 @@ export default function DiabeticPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="pregnancies"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Pregnancies:
+                      Pregnancies:{" "}
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#pregnancies"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -340,8 +349,20 @@ export default function DiabeticPrediction() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="glucose" className="mb-1 font-semi-bold">
+                    <label
+                      htmlFor="glucose"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
+                    >
                       Glucose:
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#glucose"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -356,9 +377,18 @@ export default function DiabeticPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="bloodPressure"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Blood Pressure:
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#blood-pressure"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -376,9 +406,18 @@ export default function DiabeticPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="skinThickness"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Skin Thickness:
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#skin-thickness"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -391,8 +430,20 @@ export default function DiabeticPrediction() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="insulin" className="mb-1 font-semi-bold">
+                    <label
+                      htmlFor="insulin"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
+                    >
                       Insulin:
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#insulin"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -408,8 +459,20 @@ export default function DiabeticPrediction() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="bmi" className="mb-1 font-semi-bold">
+                    <label
+                      htmlFor="bmi"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
+                    >
                       BMI:
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#bmi"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -424,9 +487,18 @@ export default function DiabeticPrediction() {
                   <div className="col-md-6">
                     <label
                       htmlFor="diabetesPedigreeFunction"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Diabetes Pedigree Function:
+                      <Link
+                        className="mt-1 me-2"
+                        target="_blank"
+                        to="/study/health-analysis/diabetic-disease#diabetes-pedigree-function"
+                      >
+                        <i
+                          className="fa-regular fa-circle-question"
+                        ></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
