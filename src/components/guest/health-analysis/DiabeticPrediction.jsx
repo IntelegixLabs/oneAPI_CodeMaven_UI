@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import { Tooltip } from "bootstrap";
+
 import { sleep } from "./../../../general-helpers.js";
 
 import ApiML from "../../../Api/ApiML.js";
@@ -31,6 +34,13 @@ export default function DiabeticPrediction() {
 
   useEffect(() => {
     index();
+
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -335,6 +345,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
@@ -361,6 +374,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
@@ -387,6 +403,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
@@ -416,6 +435,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
@@ -442,6 +464,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
@@ -471,6 +496,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
@@ -497,6 +525,9 @@ export default function DiabeticPrediction() {
                       >
                         <i
                           className="fa-regular fa-circle-question"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="Read More"
+                          data-bs-placement="top"
                         ></i>
                       </Link>
                     </label>
