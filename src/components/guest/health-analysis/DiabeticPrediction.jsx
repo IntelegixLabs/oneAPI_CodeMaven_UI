@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { sleep } from './../../../general-helpers.js';
+import { sleep } from "./../../../general-helpers.js";
 
 import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
@@ -252,7 +252,7 @@ export default function DiabeticPrediction() {
       >
         <div className="modal-dialog modal-lg modal-dialog-scrollable">
           <div className="modal-content">
-            { showScreenLoader && <ScreenLoader /> }
+            {showScreenLoader && <ScreenLoader />}
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 <i className="fa-solid fa-user-plus fa-fw"></i> Record new
