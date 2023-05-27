@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { Tooltip } from "bootstrap";
+import { Popover } from "bootstrap";
 
 import { sleep } from "./../../../general-helpers.js";
 
@@ -35,11 +35,13 @@ export default function DiabeticPrediction() {
   useEffect(() => {
     index();
 
-    const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]'
+    // Popover on hover i-button (info button) release disease parameter info
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
     );
-    const tooltipList = [...tooltipTriggerList].map(
-      (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
+
+    [...popoverTriggerList].map(
+      (popoverTriggerEl) => new Popover(popoverTriggerEl)
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -340,15 +342,17 @@ export default function DiabeticPrediction() {
                       Pregnancies:{" "}
                       <Link
                         className="mt-1 me-2"
-                        target="_blank"
                         to="/study/health-analysis/diabetic-disease#pregnancies"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Pregnancies"
+                        data-bs-content="refers to the number of times a woman has been pregnant, potentially impacting the risk or severity of diabetes, with a typical range of 0 to 17 and an average of around 3.8 in diabetic patients."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
@@ -371,13 +375,15 @@ export default function DiabeticPrediction() {
                         className="mt-1 me-2"
                         target="_blank"
                         to="/study/health-analysis/diabetic-disease#glucose"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Glucose"
+                        data-bs-content="A type of blood sugar essential for energy, is used to diagnose and monitor diabetes, where improper regulation leads to high levels. Normal range is 70-99 mg/dL, diabetes diagnosis at 126 mg/dL or higher, and target range is 80-130 mg/dL before meals and less than 180 mg/dL two hours after a meal, requires careful management for health and safety."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
@@ -400,13 +406,15 @@ export default function DiabeticPrediction() {
                         className="mt-1 me-2"
                         target="_blank"
                         to="/study/health-analysis/diabetic-disease#blood-pressure"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Blood Pressure"
+                        data-bs-content="High blood pressure in diabetes increases the risk of complications; blood pressure is measured using two numbers (systolic and diastolic) in mmHg, with a normal reading of 120/80 mmHg, while a target below 140/90 mmHg is generally recommended for diabetics."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
@@ -432,13 +440,15 @@ export default function DiabeticPrediction() {
                         className="mt-1 me-2"
                         target="_blank"
                         to="/study/health-analysis/diabetic-disease#skin-thickness"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Skin Thickness"
+                        data-bs-content="It is measured at specific locations like triceps or thigh, helps assess the risk of complications; normal thickness is 1.5 - 2.5 mm, diabetes range is 0.5 - 3.0 mm, influenced by age, gender, ethnicity, and location."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
@@ -461,13 +471,15 @@ export default function DiabeticPrediction() {
                         className="mt-1 me-2"
                         target="_blank"
                         to="/study/health-analysis/diabetic-disease#insulin"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Insulin"
+                        data-bs-content="A pancreas-produced hormone, regulates blood glucose levels; in diabetes, insufficient production or ineffective use requires blood tests and may necessitate insulin injections or medication for blood sugar management."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
@@ -488,18 +500,20 @@ export default function DiabeticPrediction() {
                       htmlFor="bmi"
                       className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      BMI:
+                      Body Mass Index:
                       <Link
                         className="mt-1 me-2"
                         target="_blank"
                         to="/study/health-analysis/diabetic-disease#bmi"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Body Mass Index"
+                        data-bs-content="Indicates underweight, normal weight, overweight, or obesity; in diabetic disease, it serves as a risk factor for type 2 diabetes, with classifications of underweight (BMI < 18.5), normal weight (BMI 18.5-24.9), overweight (BMI 25-29.9), and obese (BMI ≥ 30), although other factors like waist circumference and overall health should also be considered."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
@@ -522,13 +536,15 @@ export default function DiabeticPrediction() {
                         className="mt-1 me-2"
                         target="_blank"
                         to="/study/health-analysis/diabetic-disease#diabetes-pedigree-function"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Diabetes Pedigree Function"
+                        data-bs-content="A a genetic-based score ranging from 0 to 2.5, indicating the risk of developing diabetes based on family history, with higher scores reflecting stronger genetic influence; average DPF value in diabetes is approx. 0.5, also to note that lifestyle and environmental factors also contribute to disease development."
+                        tabIndex="0"
                       >
-                        <i
-                          className="fa-regular fa-circle-question"
-                          data-bs-toggle="tooltip"
-                          data-bs-title="Read More"
-                          data-bs-placement="top"
-                        ></i>
+                        <i className="fa-regular fa-circle-question"></i>
                       </Link>
                     </label>
                     <input
