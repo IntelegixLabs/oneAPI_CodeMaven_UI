@@ -159,7 +159,7 @@ export default function BreastCancerPrediction() {
       concave_points_worst: concavePointsWorst,
       symmetry_worst: symmetryWorst,
       fractal_dimension_worst: fractalDimensionWorst,
-      result_status: result === "Benign" ? 1 : 0,
+      result_status: result !== "Benign" ? 1 : 0,
       result: result,
     };
 
@@ -1040,7 +1040,7 @@ export default function BreastCancerPrediction() {
 
                 {isResultAvailable && (
                   <React.Fragment>
-                    {result === "Benign" ? (
+                    {result !== "Benign" ? (
                       <h4 className="mt-5">
                         Result: <span className="text-danger">{result}</span>
                       </h4>
