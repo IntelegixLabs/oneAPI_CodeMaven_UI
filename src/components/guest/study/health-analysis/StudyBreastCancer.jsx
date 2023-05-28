@@ -1,8 +1,25 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import FemaleBreastDiagram from "../../../../assets/images/female-breast-diagram-750px.jpg";
 
 export default function StudyBreastCancer() {
+  useEffect(() => {
+    let hash = window.location.hash;
+
+    if (hash) {
+      let elem = document.getElementById(hash.slice(1));
+
+      if (elem) {
+        elem.setAttribute("style", "scroll-margin-top: 80px");
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="mt-4 mb-5 container animated fadeInRight">
       <h1 className="font-bold">Breast Cancer</h1>
@@ -60,7 +77,7 @@ export default function StudyBreastCancer() {
 
       <div className="row">
         <div className="col-md-8">
-          <h3 className="mt-4">Radius Mean</h3>
+          <h3 className="mt-4" id="radius_mean">Radius Mean</h3>
           <p>It's mean of distances from center to points on the perimeter.</p>
           <p>
             Range of redius mean from approximately 6.98 mm to 28.11 mm, with a
@@ -68,7 +85,7 @@ export default function StudyBreastCancer() {
             nuclei is 12.15 while that of malignant nuclei is 17.46.
           </p>
 
-          <h3 className="mt-4">Texture Mean</h3>
+          <h3 className="mt-4" id="texture_mean">Texture Mean</h3>
           <p>
             In breast cancer, texture refers to the pattern and distribution of
             the different types of tissues and cells within a tumor, as seen on
@@ -99,7 +116,7 @@ export default function StudyBreastCancer() {
             However the average value of texture mean is approximately 19.29.
           </p>
 
-          <h3 className="mt-4">Perimeter mean</h3>
+          <h3 className="mt-4" id="perimeter_mean">Perimeter mean</h3>
           <p>
             Perimeter mean in breast cancer refers to the average length of the
             tumor boundary in an imaging test.
@@ -118,7 +135,7 @@ export default function StudyBreastCancer() {
             mm.
           </p>
 
-          <h3 className="mt-4">Area Mean</h3>
+          <h3 className="mt-4" id="area_mean">Area Mean</h3>
           <p>
             Area mean in breast cancer refers to the average size of malignant
             cells within a tumor, as seen on imaging tests like mammograms and
@@ -137,7 +154,7 @@ export default function StudyBreastCancer() {
             approximately 654.89 square units.
           </p>
 
-          <h3 className="mt-4">Smoothness Mean</h3>
+          <h3 className="mt-4" id="smothness_mean">Smoothness Mean</h3>
           <p>
             In breast cancer, smoothness mean refers to the average smoothness
             of the boundary of the tumor as seen on imaging tests like
@@ -154,7 +171,7 @@ export default function StudyBreastCancer() {
             However the average value of smoothness mean is approximately 0.096.
           </p>
 
-          <h3 className="mt-4">Compactness Mean</h3>
+          <h3 className="mt-4" id="compactness_mean">Compactness Mean</h3>
           <p>
             Compactness mean in breast cancer refers to the measure of how
             closely the tissue in the breast is packed together. A high
@@ -169,7 +186,7 @@ export default function StudyBreastCancer() {
             approximately 0.104.
           </p>
 
-          <h3 className="mt-4">Concavity Mean</h3>
+          <h3 className="mt-4" id="concavity_mean">Concavity Mean</h3>
           <p>
             Concavity mean in breast cancer refers to the measure of the amount
             of concavity or indentation present in the boundary of the tumor or
@@ -183,7 +200,7 @@ export default function StudyBreastCancer() {
             However the average value of concavity mean is approximately 0.046.
           </p>
 
-          <h3 className="mt-4">Concave Points Mean</h3>
+          <h3 className="mt-4" id="concave_points_means">Concave Points Mean</h3>
           <p>
             Concave points mean in breast cancer refers to the average number of
             concave regions or "dips" present in the boundary of the tumor or
@@ -199,7 +216,7 @@ export default function StudyBreastCancer() {
             approximately 0.048.
           </p>
 
-          <h3 className="mt-4">Symmetry Mean</h3>
+          <h3 className="mt-4" id="symmetry_mean">Symmetry Mean</h3>
           <p>
             Symmetry mean in breast cancer refers to the degree of symmetry in
             the shape and size of cells within a breast tissue sample. In
@@ -219,7 +236,7 @@ export default function StudyBreastCancer() {
             0.181.
           </p>
 
-          <h3 className="mt-4">Fractal Dimension Mean</h3>
+          <h3 className="mt-4" id="fractal_dimension_mean">Fractal Dimension Mean</h3>
           <p>
             Fractal dimension mean in breast cancer refers to a measure of the
             complexity of the boundary of the cells within a breast tissue
@@ -243,7 +260,7 @@ export default function StudyBreastCancer() {
       <hr />
       <div className="row">
         <div className="col-md-8">
-          <h3 className="mt-4">Radius SE</h3>
+          <h3 className="mt-4" id="redius_se">Radius SE</h3>
           <p>
             The "Radius SE" in breast cancer refers to the standard error of the
             mean of the distances from the center to points on the perimeter of
@@ -256,7 +273,7 @@ export default function StudyBreastCancer() {
             However the average value typically around 0.25.
           </p>
 
-          <h3 className="mt-4">Texture SE</h3>
+          <h3 className="mt-4" id="texture_se">Texture SE</h3>
           <p>
             Texture SE, or Texture Standard Error, is a measure of the variation
             in texture values within the area of a breast mass or tumor. This is
@@ -270,7 +287,7 @@ export default function StudyBreastCancer() {
             4.885.
           </p>
 
-          <h3 className="mt-4">Perimeter SE</h3>
+          <h3 className="mt-4" id="perimeter_se">Perimeter SE</h3>
           <p>
             In breast cancer, Perimeter SE refers to the standard error of the
             measurements of the perimeter of cell nuclei. It is an indication of
@@ -284,7 +301,7 @@ export default function StudyBreastCancer() {
             +/- 2.021.
           </p>
 
-          <h3 className="mt-4">Area SE</h3>
+          <h3 className="mt-4" id="area_se">Area SE</h3>
           <p>
             In breast cancer, Area SE refers to the standard error of the mean
             of the cross-sectional area of the cells detected in a biopsy. It is
@@ -300,7 +317,7 @@ export default function StudyBreastCancer() {
             20 to 60 square units. In general it is around 40-50 square microns.
           </p>
 
-          <h3 className="mt-4">Smoothness SE</h3>
+          <h3 className="mt-4" id="smoothness_se">Smoothness SE</h3>
           <p>
             Smoothness SE in breast cancer refers to the standard error of the
             mean of the smoothness values for the cells in a breast cancer
@@ -317,7 +334,7 @@ export default function StudyBreastCancer() {
             0.001713 and 0.03113, as seen in the dataset.
           </p>
 
-          <h3 className="mt-4">Compactness SE</h3>
+          <h3 className="mt-4" id="compactness_se">Compactness SE</h3>
           <p>
             In breast cancer, Compactness SE refers to the standard error of the
             mean of the distribution of the local variation in shape of the cell
@@ -331,7 +348,7 @@ export default function StudyBreastCancer() {
             breast cancer is 0.025478.
           </p>
 
-          <h3 className="mt-4">Concavity SE</h3>
+          <h3 className="mt-4" id="concavity_se">Concavity SE</h3>
           <p>
             In breast cancer analysis, "Concavity SE" refers to the standard
             error of the mean for the severity of concavity in cell nuclei. This
@@ -345,7 +362,7 @@ export default function StudyBreastCancer() {
             up to 1.0
           </p>
 
-          <h3 className="mt-4">Concave Points SE</h3>
+          <h3 className="mt-4" id="concave_points_se">Concave Points SE</h3>
           <p>
             In breast cancer, the Concave Points SE refers to the standard error
             of the mean for the local concavity of the contour lines detected in
@@ -360,7 +377,7 @@ export default function StudyBreastCancer() {
             cancer is between 0.00097 and 0.03832.
           </p>
 
-          <h3 className="mt-4">Symmetry SE</h3>
+          <h3 className="mt-4" id="symmetry_se">Symmetry SE</h3>
           <p>
             Symmetry SE (Standard Error) is a measure of the variation of the
             symmetry values of cells in a biopsy sample. A higher value
@@ -377,7 +394,7 @@ export default function StudyBreastCancer() {
             +/- 2.021.
           </p>
 
-          <h3 className="mt-4">Fractal Dimension SE</h3>
+          <h3 className="mt-4" id="fractal_dimention_se">Fractal Dimension SE</h3>
           <p>
             Fractal dimension SE refers to the standard error of the mean of the
             "fractal dimension" feature, which is a measure of the complexity of
@@ -403,6 +420,168 @@ export default function StudyBreastCancer() {
             The range of Fractal Dimension SE (standard error) in breast cancer
             data is 0.00089 to 0.0265.
           </p>
+
+          <h3 className="mt-4" id="radius_worst">Radius Worst</h3>
+          <p>
+          Radius Worst refers to the largest value of the mean radius of a 
+          tumor's cells detected in breast cancer. It represents the largest 
+          distance from the center to the outer edge of the tumor. 
+          The values range of Radius Worst typically depends on the dataset
+          being used and the measurement units. However, in general, the range 
+          can be between 6 mm to 40 mm.
+          </p>
+          <p>
+          It's important to note that the values of Radius Worst alone may not 
+          provide a definitive diagnosis of breast cancer. 
+          It is usually considered in conjunction with other clinical factors,
+           imaging tests, and additional diagnostic criteria.
+          </p>
+         {/* --------------- */}
+
+         <h3 className="mt-4" id="texture_worst">Texture Worst</h3>
+          <p>
+          Texture Worst in breast cancer refers to the standard deviation of 
+          gray-scale values in the texture of the worst-performing area of the tumor.
+           It quantifies the variation in pixel intensity within the tumor region. 
+          Higher values of Texture Worst indicate greater heterogeneity or 
+          irregularity in the texture pattern.
+          </p>
+          <p>
+          The values range of Texture Worst can vary depending on the dataset 
+          and the measurement units used. However, in general, the range can be 
+          between 10 and 40, where a higher value indicates more pronounced 
+          textural variations.
+          </p>
+          <p>
+          It's important to note that Texture Worst is just one of several 
+          factors considered in diagnosing breast cancer. It is typically 
+          evaluated in conjunction with other clinical features, imaging results, 
+          and diagnostic tests for a comprehensive assessment.
+          </p>
+          <h3 className="mt-4" id="perimeter_worst">Perimeter Worst</h3>
+          <p>
+          Perimeter Worst in breast cancer refers to the largest perimeter
+           (circumference) of the tumor among all identified regions. 
+           It measures the total length of the tumor boundary. 
+           A higher value of Perimeter Worst indicates a larger tumor size.
+          </p>
+          <p>
+          The values range of Perimeter Worst can vary depending on 
+          the dataset and the measurement units used. However, 
+          in general, the range can be between 50 and 200, where a higher
+           value indicates a larger tumor perimeter.
+          </p>
+          <h3 className="mt-4" id="area_worst">Area Worst</h3>
+          <p>
+          Area Worst in breast cancer refers to the largest area of the 
+          tumor among all identified regions. It represents the size of 
+          the tumor in terms of the total area it occupies. 
+          A higher value of Area Worst indicates a larger tumor size.
+          </p>
+          <p>
+          The values range of Area Worst can vary depending on the dataset 
+          and the measurement units used. However, in general, the range can be 
+          between 200 and 2500 square units, where a higher value indicates 
+          a larger tumor area.
+          </p>
+          <h3 className="mt-4" id="smoothness_worst">Smoothness Worst</h3>
+          <p>
+          Smoothness Worst in breast cancer refers to the variation in the 
+          local radius lengths of the tumor's contour. 
+          It represents the irregularity or smoothness of the tumor's surface. 
+          A higher value of Smoothness Worst indicates a more irregular and 
+          less smooth tumor surface.
+          </p>
+          <p>
+          The values range of Smoothness Worst can vary depending on the dataset 
+          and the measurement units used. However, in general, the range can be 
+          between 0.05 and 0.3, where a higher value indicates a more irregular 
+          tumor surface.
+          </p>
+          <h3 className="mt-4" id="compactness_worst">Compactness Worst</h3>
+          <p>
+          Compactness Worst in breast cancer refers to the ratio of 
+          the perimeter squared to the area of the tumor mass. 
+          It represents the compactness or density of the tumor. 
+          A higher value of Compactness Worst indicates a more compact and 
+          dense tumor.
+          </p>
+          <p>
+          The values range of Compactness Worst can vary depending on the dataset 
+          and the measurement units used. However, in general, the range can be 
+          between 0.02 and 0.35, where a higher value indicates a more compact and 
+          dense tumor.
+          </p>
+          <h3 className="mt-4" id="concavity_worst">Concavity Worst</h3>
+          <p>
+          Concavity Worst in breast cancer refers to the severity
+           of concave portions or depressions in the contour of the tumor mass. 
+          It measures the extent of concavity or irregularity in the tumor's shape. 
+          A higher value of Concavity Worst indicates a greater degree of 
+          concavity or irregularity.
+          </p>
+          <p>
+          The values range of Concavity Worst can vary depending on the dataset 
+          and the measurement units used. However, in general, the range can be 
+          between 0.01 and 0.4, where a higher value indicates a greater degree of
+           concavity or irregularity in the tumor's shape.
+          </p>
+          <h3 className="mt-4" id="concave_points_worst">Concave Points Worst</h3>
+          <p>
+          Concave Points Worst in breast cancer refers to the number of 
+          concave portions or points with the highest severity in the 
+          contour of the tumor mass. It measures the presence and severity 
+          of concave points within the tumor. A higher value of Concave Points 
+          Worst indicates a greater number and severity of concave points.
+          </p>
+          <p>
+          The values range of Concave Points Worst can vary depending on the 
+          dataset and the measurement units used. However, in general, 
+          the range can be between 0.0 and 0.2, where a higher value indicates a 
+          greater number and severity of concave points within the tumor.
+          </p>
+          <h3 className="mt-4" id="symmetry_worst">Symmetry Worst</h3>
+          <p>
+          Symmetry Worst in breast cancer refers to the symmetry or 
+          irregularity of the cells' shape and size in the worst or most 
+          severe area of the tumor mass. It measures the deviation 
+          rom perfect symmetry in the shape of the cells.
+          </p>
+          <p>
+          The values range of Symmetry Worst can vary depending on the dataset 
+          and the measurement units used. However, in general, the range can be 
+          between 0.0 and 1.0, where a lower value indicates a more irregular and 
+          asymmetric shape of the cells in the tumor.
+          </p>
+          <p>
+          A higher value of Symmetry Worst indicates a closer approximation to 
+          a symmetric shape, while a lower value suggests greater irregularity 
+          and asymmetry. The assessment of symmetry helps in the evaluation of 
+          the tumor's characteristics and can be used as a feature in diagnosing 
+          and staging breast cancer.
+          </p>
+          <h3 className="mt-4" id="fractal_dimension_worst">Fractal Dimension Worst</h3>
+          <p>
+          Fractal Dimension Worst in breast cancer refers to a measure of 
+          the complexity and irregularity of the tumor mass at its worst or 
+          most severe area. It quantifies the degree of intricate patterns and 
+          irregularities in the boundary of the cells.
+          </p>
+          <p>
+          The values range of Fractal Dimension Worst can vary depending on 
+          the dataset and the measurement units used. However, in general,
+           the range is typically between 0.0 and 1.0. A lower value indicates 
+          a smoother and less complex boundary, while a higher value suggests
+           a more intricate and irregular boundary of the cells in the tumor.
+          </p>
+          <p>
+          Fractal Dimension Worst is a mathematical measure that helps assess 
+          the texture and structural characteristics of the tumor. 
+          It is used as a feature in diagnosing and staging breast cancer, 
+          along with other clinical information, imaging results, and diagnostic 
+          tests.
+          </p>
+          
         </div>
       </div>
     </div>

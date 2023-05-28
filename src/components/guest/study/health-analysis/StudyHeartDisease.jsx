@@ -1,7 +1,24 @@
 import Diagram from "../../../../assets/images/heart-disease.png";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function StudyHeartDisease() {
+  useEffect(() => {
+    let hash = window.location.hash;
+
+    if (hash) {
+      let elem = document.getElementById(hash.slice(1));
+
+      if (elem) {
+        elem.setAttribute("style", "scroll-margin-top: 80px");
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
@@ -43,7 +60,7 @@ export default function StudyHeartDisease() {
 
       <div className="row">
         <div className="col-md-6">
-          <h3 className="mt-5">Chest Pain Type </h3>
+          <h3 className="mt-5" id="chest_pain_type">Chest Pain Type </h3>
           <p>
             Chest pain type is one of the features that can be used to diagnose
             heart disease. There are four types of chest pain that are
@@ -82,7 +99,7 @@ export default function StudyHeartDisease() {
             attention right away.
           </p>
 
-          <h3 className="mt-5">Resting Blood Pressure (RBP)</h3>
+          <h3 className="mt-5" id="rbp">Resting Blood Pressure (RBP)</h3>
           <p>
             Resting Blood Pressure (RBP) is the pressure of blood on the walls
             of arteries during the resting phase of the cardiac cycle. In the
@@ -102,7 +119,7 @@ export default function StudyHeartDisease() {
             problems.
           </p>
 
-          <h3 className="mt-5">Serum Cholestoral</h3>
+          <h3 className="mt-5" id="serum_cholestoral">Serum Cholestoral</h3>
           <p>
             Serum cholesterol is a type of fat found in the blood. In the
             context of heart disease, high levels of serum cholesterol are
@@ -119,7 +136,7 @@ export default function StudyHeartDisease() {
             cholesterol levels.{" "}
           </p>
 
-          <h3 className="mt-5">Fasting Blood Sugar</h3>
+          <h3 className="mt-5" id="fbs">Fasting Blood Sugar</h3>
           <p>
             Fasting blood sugar is the level of glucose in the blood after a
             period of fasting, usually for at least 8 hours. In the context of
@@ -136,7 +153,7 @@ export default function StudyHeartDisease() {
             mg/dL to reduce the risk of heart disease.
           </p>
 
-          <h3 className="mt-5">Resting Electrocardiographic (ECG)</h3>
+          <h3 className="mt-5" id="ecg">Resting Electrocardiographic (ECG)</h3>
           <p>
             Resting Electrocardiographic (ECG) in heart disease refers to the
             electrical activity of the heart recorded while the patient is at
@@ -169,7 +186,7 @@ export default function StudyHeartDisease() {
             </li>
           </ol>
 
-          <h3 className="mt-5">Maximum Heart Rate </h3>
+          <h3 className="mt-5" id="mhr">Maximum Heart Rate </h3>
           <p>
             In heart disease, Maximum Heart Rate (also known as Maximum Heart
             Rate Achieved) refers to the highest number of times the heart beats
@@ -189,7 +206,7 @@ export default function StudyHeartDisease() {
             (220 - 30).
           </p>
 
-          <h3 className="mt-5">Exercise Induced Angina</h3>
+          <h3 className="mt-5" id="eia">Exercise Induced Angina</h3>
           <p>
             Exercise-induced angina is a symptom of heart disease characterized
             by chest pain or discomfort that occurs during physical activity or
@@ -207,7 +224,7 @@ export default function StudyHeartDisease() {
             disease and should be evaluated by a doctor.
           </p>
 
-          <h3 className="mt-5">Old Peak</h3>
+          <h3 className="mt-5" id="old_peak">Old Peak</h3>
           <p>
             Old Peak is a term used to describe a decrease in ST segment during
             exercise compared to baseline, as measured by an electrocardiogram
@@ -221,7 +238,7 @@ export default function StudyHeartDisease() {
             narrowing or blockage of the coronary arteries.
           </p>
 
-          <h3 className="mt-5">Slope</h3>
+          <h3 className="mt-5" id="slope">Slope</h3>
           <p>
             the slope refers to the slope of the ST segment on an
             electrocardiogram (ECG). The ST segment is a part of the ECG that
@@ -264,7 +281,7 @@ export default function StudyHeartDisease() {
             coronary artery disease.
           </p>
 
-          <h3 className="mt-5">Number of Major Vessels</h3>
+          <h3 className="mt-5" id="major_vassels">Number of Major Vessels</h3>
           <p>
             Number of Major Vessels typically refers to the number of major
             blood vessels that supply the heart muscle with blood. These vessels
@@ -277,7 +294,7 @@ export default function StudyHeartDisease() {
             as coronary artery disease.
           </p>
 
-          <h3 className="mt-5">Thal</h3>
+          <h3 className="mt-5" id="thal">Thal</h3>
           <p>
             Thal or Thalassemia is a genetic blood disorder that affects the
             production of hemoglobin in the body. In heart disease, Thal refers

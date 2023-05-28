@@ -5,6 +5,7 @@ import { sleep } from "./../../../general-helpers.js";
 import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
+import { Popover } from "bootstrap";
 
 export default function BreastCancerPrediction() {
   const DB = "breastCancerPredictionPatientsDB";
@@ -54,6 +55,14 @@ export default function BreastCancerPrediction() {
 
   useEffect(() => {
     index();
+    // Popover on hover i-button (info button) release disease parameter info
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+
+    [...popoverTriggerList].map(
+      (popoverTriggerEl) => new Popover(popoverTriggerEl)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -507,9 +516,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="radius_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Radius Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#radius_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Radius Mean"
+                        data-bs-content="It's mean of distances from center to points on the perimeter. 
+                        Range of redius mean from approximately 6.98 mm to 28.11 mm, with a median value of 13.37 mm."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -524,9 +548,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="texture_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Texture Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#texture_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Texture Mean"
+                        data-bs-content="In breast cancer, texture refers to the pattern and distribution of
+                        the different types of tissues and cells within a tumor, as seen on
+                        imaging tests like mammograms and ultrasounds."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -541,9 +581,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="perimeter_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Perimeter Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#perimeter_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Perimeter Mean"
+                        data-bs-content="Perimeter mean in breast cancer refers to the average length of the
+                        tumor boundary in an imaging test. The range of perimeter mean values is approximately 43.79 to 188.5,
+                        However the average value of perimeter mean is approximately 91.97
+                        mm."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -559,8 +616,26 @@ export default function BreastCancerPrediction() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="area_mean" className="mb-1 font-semi-bold">
+                    <label htmlFor="area_mean" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Area Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#area_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Area Mean"
+                        data-bs-content="Area mean in breast cancer refers to the average size of malignant
+                        cells within a tumor, as seen on imaging tests like mammograms and
+                        ultrasounds. The range of area mean values is approximately 143.5 to 2501.0
+                        square units. However the average value of area mean is
+                        approximately 654.89 square units."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -575,9 +650,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="smoothness_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Smoothness Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#smothness_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Smoothness Mean"
+                        data-bs-content="In breast cancer, smoothness mean refers to the average smoothness
+                        of the boundary of the tumor as seen on imaging tests like
+                        mammograms and ultrasounds. The range of smoothness mean values is approximately 0.71 to 0.163.
+                        However the average value of smoothness mean is approximately 0.096."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -592,9 +684,28 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="compactness_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Compactness Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#compactness_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Compactness Mean"
+                        data-bs-content="Compactness mean in breast cancer refers to the measure of how
+                        closely the tissue in the breast is packed together. A high
+                        compactness mean value can indicate that the tissue is more dense
+                        and potentially more suspicious for cancer, while a lower value can
+                        suggest that the tissue is less dense and potentially less
+                        concerning."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -612,9 +723,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="concavity_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Concavity Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#concavity_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Concavity Mean"
+                        data-bs-content="Concavity mean in breast cancer refers to the measure of the amount
+                        of concavity or indentation present in the boundary of the tumor or
+                        mass."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -629,9 +756,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="concave_points_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Concave Points Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#concave_points_means"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Concave Points Mean"
+                        data-bs-content="Concave points mean in breast cancer refers to the average number of
+                        concave regions or 'dips' present in the boundary of the tumor or
+                        mass."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -646,9 +789,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="symmetry_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Symmetry Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#symmetry_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Symmetry Mean"
+                        data-bs-content="Symmetry mean in breast cancer refers to the degree of symmetry in
+                        the shape and size of cells within a breast tissue sample.  In
+                        healthy breast tissue, cells tend to be fairly uniform in size and
+                        shape, resulting in a higher symmetry mean value."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -666,9 +826,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="fractal_dimension_mean"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Fractal Dimension Mean:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#fractal_dimension_mean"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Fractal Dimension Mean"
+                        data-bs-content="Fractal dimension mean in breast cancer refers to a measure of the
+                        complexity of the boundary of the cells within a breast tissue
+                        sample. In healthy breast tissue, cells tend to have a smooth and
+                        regular boundary, resulting in a lower fractal dimension mean value."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -686,8 +863,24 @@ export default function BreastCancerPrediction() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="radius_se" className="mb-1 font-semi-bold">
+                    <label htmlFor="radius_se" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Radius SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#redius_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Radius SE"
+                        data-bs-content=" The Radius SE in breast cancer refers to the standard error of the
+                        mean of the distances from the center to points on the perimeter of
+                        a detected mass or tumor in the breast."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -700,8 +893,25 @@ export default function BreastCancerPrediction() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="texture_se" className="mb-1 font-semi-bold">
+                    <label htmlFor="texture_se" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Texture SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#texture_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Texture SE"
+                        data-bs-content="Texture SE, or Texture Standard Error, is a measure of the variation
+                        in texture values within the area of a breast mass or tumor. This is
+                        typically calculated as the standard error of the texture values
+                        within the region of interest."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -716,9 +926,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="perimeter_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Perimeter SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#perimeter_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Perimeter SE"
+                        data-bs-content="In breast cancer, Perimeter SE refers to the standard error of the
+                        measurements of the perimeter of cell nuclei. It is an indication of
+                        the variability or precision of the measurements."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -734,8 +960,23 @@ export default function BreastCancerPrediction() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="area_se" className="mb-1 font-semi-bold">
+                    <label htmlFor="area_se" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Area SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#area_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Area SE"
+                        data-bs-content="In breast cancer, Area SE refers to the standard error of the mean
+                        of the cross-sectional area of the cells detected in a biopsy. "
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -750,9 +991,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="smoothness_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Smoothness SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#smoothness_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Smoothness SE"
+                        data-bs-content="Smoothness SE in breast cancer refers to the standard error of the
+                        mean of the smoothness values for the cells in a breast cancer
+                        sample."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -767,9 +1024,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="compactness_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Compactness SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#compactness_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Compactness SE"
+                        data-bs-content="In breast cancer, Compactness SE refers to the standard error of the
+                        mean of the distribution of the local variation in shape of the cell
+                        nuclei. It represents the smoothness of the boundary of the cell
+                        nucleus."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -787,9 +1061,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="concavity_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Concavity SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#concavity_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Concavity SE"
+                        data-bs-content="In breast cancer analysis, Concavity SE refers to the standard
+                        error of the mean for the severity of concavity in cell nuclei."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -804,9 +1093,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="concave_points_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Concave Points SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#concave_points_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Concave Points SE"
+                        data-bs-content="In breast cancer, the Concave Points SE refers to the standard error
+                        of the mean for the local concavity of the contour lines detected in
+                        the grayscale image of a fine needle aspirate (FNA) of a breast
+                        mass."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -821,9 +1127,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="symmetry_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Symmetry SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#symmetry_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Symmetry SE"
+                        data-bs-content="Symmetry SE (Standard Error) is a measure of the variation of the
+                        symmetry values of cells in a biopsy sample. A higher value
+                        indicates greater variation in the symmetry of the cells."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -841,9 +1163,26 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="fractal_dimension_se"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Fractal Dimension SE:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#fractal_dimention_se"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Fractal Dimension SE"
+                        data-bs-content="Fractal dimension SE refers to the standard error of the mean of the
+                        fractal dimension feature, which is a measure of the complexity of
+                        the tumor. The fractal dimension is a mathematical concept that
+                        characterizes the degree of self-similarity of a complex structure."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -863,9 +1202,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="radius_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Radius Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#radius_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Radius Worst"
+                        data-bs-content="Radius Worst refers to the largest value of the mean radius of a 
+                        tumor's cells detected in breast cancer. It represents the largest 
+                        distance from the center to the outer edge of the tumor. "
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -880,9 +1235,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="texture_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Texture Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#texture_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Texture Worst"
+                        data-bs-content="Texture Worst in breast cancer refers to the standard deviation of 
+                        gray-scale values in the texture of the worst-performing area of the tumor."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -897,9 +1267,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="perimeter_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Perimeter Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#perimeter_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Perimeter Worst"
+                        data-bs-content="Perimeter Worst in breast cancer refers to the largest perimeter
+                        (circumference) of the tumor among all identified regions."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -915,8 +1300,24 @@ export default function BreastCancerPrediction() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="area_worst" className="mb-1 font-semi-bold">
+                    <label htmlFor="area_worst" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Area Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#area_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Area Worst"
+                        data-bs-content="Area Worst in breast cancer refers to the largest area of the 
+                        tumor among all identified regions. It represents the size of 
+                        the tumor in terms of the total area it occupies. "
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -931,9 +1332,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="smoothness_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Smoothness Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#smoothness_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Smoothness Worst"
+                        data-bs-content="Smoothness Worst in breast cancer refers to the variation in the 
+                        local radius lengths of the tumor's contour. "
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -948,9 +1364,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="compactness_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Compactness Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#compactness_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Compactness Worst"
+                        data-bs-content="Compactness Worst in breast cancer refers to the ratio of 
+                        the perimeter squared to the area of the tumor mass. "
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -968,9 +1399,24 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="concavity_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Concavity Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#concavity_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Concavity Worst"
+                        data-bs-content="Concavity Worst in breast cancer refers to the severity
+                        of concave portions or depressions in the contour of the tumor mass."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -985,9 +1431,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="concave_points_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Concave Points Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#concave_points_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Concave Points Worst"
+                        data-bs-content="Concave Points Worst in breast cancer refers to the number of 
+                        concave portions or points with the highest severity in the 
+                        contour of the tumor mass."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -1002,9 +1464,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="symmetry_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Symmetry Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#symmetry_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Symmetry Worst"
+                        data-bs-content="Symmetry Worst in breast cancer refers to the symmetry or 
+                        irregularity of the cells' shape and size in the worst or most 
+                        severe area of the tumor mass."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -1022,9 +1500,25 @@ export default function BreastCancerPrediction() {
                   <div className="col-md-4">
                     <label
                       htmlFor="fractal_dimension_worst"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Fractal Dimension Worst:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/breast-cancer#fractal_dimension_worst"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Fractal Dimension Worst"
+                        data-bs-content="Fractal Dimension Worst in breast cancer refers to a measure of 
+                        the complexity and irregularity of the tumor mass at its worst or 
+                        most severe area."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"

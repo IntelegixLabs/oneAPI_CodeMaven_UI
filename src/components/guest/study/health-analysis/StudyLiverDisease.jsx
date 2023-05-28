@@ -1,7 +1,24 @@
 import Diagram from "../../../../assets/images/liver-disease.jpg";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function StudyLiverDisease() {
+  useEffect(() => {
+    let hash = window.location.hash;
+
+    if (hash) {
+      let elem = document.getElementById(hash.slice(1));
+
+      if (elem) {
+        elem.setAttribute("style", "scroll-margin-top: 80px");
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
@@ -40,7 +57,7 @@ export default function StudyLiverDisease() {
 
       <div className="mt-5 row">
         <div className="col-md-6">
-          <h3>Pregnancies</h3>
+          <h3 id="pregnancies">Pregnancies</h3>
           <p>
             Liver disease is a broad term that encompasses many different types
             of liver problems. However, pregnancy is not typically associated
@@ -49,7 +66,7 @@ export default function StudyLiverDisease() {
             preeclampsia.
           </p>
 
-          <h3 className="mt-5">Glucose</h3>
+          <h3 className="mt-5" id="glucose">Glucose</h3>
           <p>
             Liver disease does not usually affect glucose levels in the same way
             that diabetes does. However, some forms of liver disease, such as
@@ -88,7 +105,7 @@ export default function StudyLiverDisease() {
             healthy range.
           </p>
 
-          <h3 className="mt-5">Alkaline phosphatase (ALP)</h3>
+          <h3 className="mt-5" id="alp">Alkaline phosphatase (ALP)</h3>
           <p>
             Alkaline phosphatase (ALP) is an enzyme found in many tissues in the
             body, including the liver, bones, kidneys, and intestines. In the
@@ -110,7 +127,7 @@ export default function StudyLiverDisease() {
             international units per liter (IU/L).
           </p>
 
-          <h3 className="mt-5">Alamine aminotransferase (ALT)</h3>
+          <h3 className="mt-5" id="alt">Alamine aminotransferase (ALT)</h3>
           <p>
             Alamine aminotransferase (ALT) is an enzyme found primarily in the
             liver cells. It is also known as serum glutamic-pyruvic transaminase
@@ -124,7 +141,7 @@ export default function StudyLiverDisease() {
             damage or inflammation.
           </p>
 
-          <h3 className="mt-5">Aspartate aminotransferase (AST)</h3>
+          <h3 className="mt-5" id="ast">Aspartate aminotransferase (AST)</h3>
           <p>
             Aspartate aminotransferase (AST) is an enzyme that is predominantly
             found in the liver, but is also present in other tissues such as the
@@ -142,7 +159,7 @@ export default function StudyLiverDisease() {
             generally between 10 to 40 units per liter (U/L).
           </p>
 
-          <h3 className="mt-5">Total Protiens </h3>
+          <h3 className="mt-5" id="total_protiens">Total Protiens </h3>
           <p>
             Total proteins in liver disease refer to the amount of protein in
             the blood. The liver plays a vital role in producing proteins that
@@ -159,7 +176,7 @@ export default function StudyLiverDisease() {
             blood is 6.0 to 8.3 grams per deciliter (g/dL).
           </p>
 
-          <h3 className="mt-5">Albumin</h3>
+          <h3 className="mt-5" id="albumin">Albumin</h3>
           <p>
             Albumin is a type of protein that is produced in the liver and is
             present in the blood. It is an essential protein that helps regulate
@@ -175,7 +192,7 @@ export default function StudyLiverDisease() {
             typically between 3.4 and 5.4 grams per deciliter (g/dL).
           </p>
 
-          <h3 className="mt-5">Albumin and Globulin Ratio (AGR)</h3>
+          <h3 className="mt-5" id="agr">Albumin and Globulin Ratio (AGR)</h3>
           <p>
             Albumin and Globulin Ratio (AGR) is a blood test that measures the
             levels of albumin and globulin in the blood and calculates the ratio
