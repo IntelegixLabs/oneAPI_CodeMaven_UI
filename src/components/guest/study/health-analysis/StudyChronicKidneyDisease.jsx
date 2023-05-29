@@ -1,12 +1,29 @@
 import Diagram from "../../../../assets/images/Chronic-Kidney-Disease.png";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function StudyChronicKidneyDisease() {
+  useEffect(() => {
+    let hash = window.location.hash;
+
+    if (hash) {
+      let elem = document.getElementById(hash.slice(1));
+
+      if (elem) {
+        elem.setAttribute("style", "scroll-margin-top: 80px");
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="mt-4 mb-5 container animated fadeInRight">
       <div className="row">
         <div className="col-md-8">
-          <h1 class="font-bold">Chronic Kidney Disease</h1>
+          <h1 className="font-bold">Chronic Kidney Disease</h1>
           <p>
             Chronic Kidney Disease (CKD) is a long-term and progressive
             condition in which the kidneys gradually lose their function over
@@ -54,7 +71,7 @@ export default function StudyChronicKidneyDisease() {
 
       <div className="row mt-5">
         <div className="col-md-6">
-          <h3>Blood Pressure </h3>
+          <h3 id="blood_pressure">Blood Pressure </h3>
           <p>
             Blood pressure is an important factor to consider in chronic kidney
             disease (CKD) because it can contribute to the progression of the
@@ -80,7 +97,7 @@ export default function StudyChronicKidneyDisease() {
             be reduced.
           </p>
 
-          <h3 className="mt-5">Specific Gravity</h3>
+          <h3 className="mt-5" id="gravity">Specific Gravity</h3>
           <p>
             Specific gravity is a measure of how concentrated the urine is. In
             chronic kidney disease, the kidneys are not able to filter blood as
@@ -110,7 +127,7 @@ export default function StudyChronicKidneyDisease() {
             how well the kidneys are functioning.
           </p>
 
-          <h3 className="mt-5">Albumin</h3>
+          <h3 className="mt-5" id="albumin">Albumin</h3>
           <p>
             Albumin is a protein made by the liver and is essential for
             maintaining fluid balance in the body. In chronic kidney disease
@@ -136,7 +153,7 @@ export default function StudyChronicKidneyDisease() {
             infections, cardiovascular disease, and mortality.
           </p>
 
-          <h3 className="mt-5">Sugar</h3>
+          <h3 className="mt-5" id="sugar">Sugar</h3>
           <p>
             In Chronic Kidney Disease (CKD), sugar (glucose) may be present in
             the urine. Normally, the kidneys filter out excess glucose from the
@@ -157,7 +174,7 @@ export default function StudyChronicKidneyDisease() {
             needed to determine the underlying cause.
           </p>
 
-          <h3 className="mt-5">Red Blood Cells</h3>
+          <h3 className="mt-5" id="red_blood_cells">Red Blood Cells</h3>
           <p>
             In chronic kidney disease, the kidneys are not able to function
             properly and this can lead to changes in the levels of red blood
@@ -187,7 +204,7 @@ export default function StudyChronicKidneyDisease() {
             anemia.
           </p>
 
-          <h3 className="mt-5">Pus Cell</h3>
+          <h3 className="mt-5" id="pus_cell">Pus Cell</h3>
           <p>
             In chronic kidney disease (CKD), the level of pus cells (also called
             white blood cells) in the urine can indicate the presence of
@@ -217,7 +234,7 @@ export default function StudyChronicKidneyDisease() {
             treatment.
           </p>
 
-          <h3 className="mt-5">Pus Cell Clumps</h3>
+          <h3 className="mt-5" id="pus_cell_clumps">Pus Cell Clumps</h3>
           <p>
             Pus cell clumps refer to the clumping together of white blood cells,
             also known as pus cells, in urine. This can be a sign of kidney
@@ -231,7 +248,7 @@ export default function StudyChronicKidneyDisease() {
             for further testing and evaluation by a healthcare provider.
           </p>
 
-          <h3 className="mt-5">Bacteria</h3>
+          <h3 className="mt-5" id="bacteria">Bacteria</h3>
           <p>
             Bacteria is not normally present in urine. Its presence in the urine
             is a sign of infection. In chronic kidney disease (CKD), the risk of
@@ -248,7 +265,7 @@ export default function StudyChronicKidneyDisease() {
             infection from spreading to the kidneys.
           </p>
 
-          <h3 className="mt-5">Blood Glucose Random</h3>
+          <h3 className="mt-5" id="blood_glucose">Blood Glucose Random</h3>
           <p>
             Blood glucose random is a test that measures the level of glucose
             (sugar) in the blood at any given time, without the need for
@@ -274,7 +291,7 @@ export default function StudyChronicKidneyDisease() {
             glucose level and monitor it regularly.
           </p>
 
-          <h3 className="mt-5">Blood Urea</h3>
+          <h3 className="mt-5" id="blood_urea">Blood Urea</h3>
           <p>
             Blood urea is a laboratory test that measures the amount of urea
             nitrogen in the blood, which is a waste product generated during
@@ -296,7 +313,7 @@ export default function StudyChronicKidneyDisease() {
             <li>Stage 5: 60-120 mg/dL</li>
           </ul>
 
-          <h3 className="mt-5">Serum Creatinine</h3>
+          <h3 className="mt-5" id="serum_creatinine">Serum Creatinine</h3>
           <p>
             Serum creatinine is a waste product produced by muscles from the
             breakdown of a compound called creatine. It is normally removed from
@@ -316,7 +333,7 @@ export default function StudyChronicKidneyDisease() {
             creatinine level, age, gender, and race.
           </p>
 
-          <h3 className="mt-5">Sodium</h3>
+          <h3 className="mt-5" id="sodium">Sodium</h3>
           <p>
             Sodium is an important electrolyte in the body that helps regulate
             blood pressure and fluid balance. In chronic kidney disease (CKD),
@@ -334,7 +351,7 @@ export default function StudyChronicKidneyDisease() {
             such as diuretics.
           </p>
 
-          <h3 className="mt-5">Potassium</h3>
+          <h3 className="mt-5" id="potassium">Potassium</h3>
           <p>
             Potassium is an important electrolyte in the body that helps in
             various bodily functions, including nerve and muscle function, fluid
@@ -351,7 +368,7 @@ export default function StudyChronicKidneyDisease() {
             medical attention.{" "}
           </p>
 
-          <h3 className="mt-5">Hemoglobin</h3>
+          <h3 className="mt-5" id="hemoglobin">Hemoglobin</h3>
           <p>
             Hemoglobin is a protein in red blood cells that carries oxygen
             throughout the body. In chronic kidney disease, the kidneys are not
@@ -367,7 +384,7 @@ export default function StudyChronicKidneyDisease() {
             require treatment to improve the patient's quality of life.
           </p>
 
-          <h3 className="mt-5">Packed Cell Volume</h3>
+          <h3 className="mt-5" id="packed_cell_volume">Packed Cell Volume</h3>
           <p>
             Packed Cell Volume (PCV), also known as hematocrit, is a measure of
             the proportion of red blood cells in the blood. In Chronic Kidney
@@ -381,7 +398,7 @@ export default function StudyChronicKidneyDisease() {
             kidneys that stimulates the bone marrow to produce red blood cells.{" "}
           </p>
 
-          <h3 className="mt-5">White Blood Cell Count</h3>
+          <h3 className="mt-5" id="white_blood_cell_count">White Blood Cell Count</h3>
           <p>
             In chronic kidney disease, white blood cell count can vary depending
             on the underlying cause and other factors. The normal range of white
@@ -396,7 +413,7 @@ export default function StudyChronicKidneyDisease() {
             treatment.
           </p>
 
-          <h3 className="mt-5">Red Blood Cell Count</h3>
+          <h3 className="mt-5" id="red_blood_cell_count">Red Blood Cell Count</h3>
           <p>
             Red blood cell count, also known as erythrocyte count, is a measure
             of the number of red blood cells in a given volume of blood. In
@@ -415,7 +432,7 @@ export default function StudyChronicKidneyDisease() {
             fatigue, weakness, and shortness of breath, among other symptoms.
           </p>
 
-          <h3 className="mt-5">Hypertension</h3>
+          <h3 className="mt-5" id="hypertension">Hypertension</h3>
           <p>
             Hypertension, or high blood pressure, is a common complication of
             chronic kidney disease (CKD). It can cause further damage to the
@@ -431,7 +448,7 @@ export default function StudyChronicKidneyDisease() {
             target and develop a treatment plan to achieve it.{" "}
           </p>
 
-          <h3 className="mt-5">Diabetes Mellitus</h3>
+          <h3 className="mt-5" id="diabetes_mellitus">Diabetes Mellitus</h3>
           <p>
             Diabetes Mellitus is a medical condition characterized by high blood
             sugar levels due to the body's inability to produce or use insulin
@@ -449,7 +466,7 @@ export default function StudyChronicKidneyDisease() {
             <li>Blood Pressure: &lt;130/80 mmHg</li>
           </ol>
 
-          <h3 className="mt-5">Coronary Artery Disease (CAD)</h3>
+          <h3 className="mt-5" id="cad">Coronary Artery Disease (CAD)</h3>
           <p>
             Chronic Kidney Disease (CKD) can increase the risk of developing
             coronary artery disease (CAD), which is a condition where the blood
@@ -496,7 +513,7 @@ export default function StudyChronicKidneyDisease() {
             </li>
           </ol>
 
-          <h3 className="mt-5">Appetite</h3>
+          <h3 className="mt-5" id="appetite">Appetite</h3>
           <p>
             In chronic kidney disease (CKD), appetite can be affected due to
             various reasons such as high levels of waste products in the blood,
@@ -515,7 +532,7 @@ export default function StudyChronicKidneyDisease() {
             interventions to improve nutritional status.
           </p>
 
-          <h3 className="mt-5">Pedal Edema</h3>
+          <h3 className="mt-5" id="pedal_edema">Pedal Edema</h3>
           <p>
             Pedal edema is a condition where there is swelling in the feet and
             ankles due to the accumulation of fluid. In chronic kidney disease,
@@ -543,7 +560,7 @@ export default function StudyChronicKidneyDisease() {
             signs of fluid overload.
           </p>
 
-          <h3 className="mt-5">Anemia</h3>
+          <h3 className="mt-5" id="anemia">Anemia</h3>
           <p>
             Anemia is a common complication in Chronic Kidney Disease (CKD) that
             occurs due to a decrease in the number of red blood cells or

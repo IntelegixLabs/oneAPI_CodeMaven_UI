@@ -53,7 +53,7 @@ export default function SkinCancer() {
       });
   };
 
-  const diseaseDetails = (result) => {
+  const diseaseDetails = (result, description = null) => {
     let disease = {
       name: "",
       description: "Lorem Ipsum Dolor Sit Amet"
@@ -65,6 +65,9 @@ export default function SkinCancer() {
       disease.name = "Vascular Lesion";
     } else {
       disease.name = "Unknown";
+    }
+    if (description !== null) {
+      disease.description = description;
     }
 
     return (
@@ -138,7 +141,29 @@ export default function SkinCancer() {
                     <div className="col-md-7">
                       {result && (
                         <React.Fragment>
-                          { diseaseDetails(result) }
+                          {diseaseDetails(result, <><p>Treatment options for melanoma depend on the stage and location of the cancer but may include:</p>
+                            <ol>
+                              <li>
+                                <strong>Surgical excision:</strong> The primary treatment for early-stage melanoma involves surgically removing the tumor and a margin of healthy skin around it.
+                              </li>
+                              <li>
+                                <strong>Lymph node biopsy:</strong> If melanoma has spread or is at a high risk of spreading, nearby lymph nodes may be tested for the presence of cancer cells.
+                              </li>
+                              <li>
+                                <strong>Immunotherapy:</strong> This treatment uses drugs to stimulate the immune system to recognize and destroy cancer cells.
+                              </li>
+                              <li>
+                                <strong>Targeted therapy:</strong> Certain drugs target specific gene mutations or proteins present in melanoma cells to inhibit their growth.
+                              </li>
+                              <li>
+                                <strong>Radiation therapy:</strong> It may be used in some cases to kill cancer cells or relieve symptoms.
+                              </li>
+                              <li>
+                                <strong>Chemotherapy:</strong> While not as commonly used as in other types of cancer, chemotherapy drugs can be used to treat advanced melanoma that has spread to other organs.
+                              </li>
+                            </ol>
+                          </>
+                          )}
                         </React.Fragment>
                       )}
                       {!result && (

@@ -5,6 +5,8 @@ import { sleep } from "./../../../general-helpers.js";
 import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
+import { Popover } from "bootstrap";
+
 
 export default function ChronicKidneyDisease() {
   const DB = "chronicKidneyDiseasePatientsDB";
@@ -47,6 +49,14 @@ export default function ChronicKidneyDisease() {
 
   useEffect(() => {
     index();
+    // Popover on hover i-button (info button) release disease parameter info
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+
+    [...popoverTriggerList].map(
+      (popoverTriggerEl) => new Popover(popoverTriggerEl)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -453,9 +463,25 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="bloodPressure"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Blood Pressure:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#blood_pressure"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Blood Pressure (BP)"
+                        data-bs-content=" Blood pressure is an important factor to consider in chronic kidney
+                        disease (CKD) because it can contribute to the progression of the
+                        disease."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -470,9 +496,26 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="specificGravity"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Specific Gravity:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#gravity"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Specific Gravity"
+                        data-bs-content="Specific gravity is a measure of how concentrated the urine is. In
+                        chronic kidney disease, the kidneys are not able to filter blood as
+                        effectively as they should, leading to a buildup of waste products
+                        in the body."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -485,8 +528,24 @@ export default function ChronicKidneyDisease() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="albumin" className="mb-1 font-semi-bold">
+                    <label htmlFor="albumin" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Albumin:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#gravity"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Albumin"
+                        data-bs-content="The normal range for albumin in adults is between 3.5 to 5.5 g/dL.
+                        In CKD, the level of albumin in the blood can decrease, leading to a
+                        condition called hypoalbuminemia."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -502,8 +561,24 @@ export default function ChronicKidneyDisease() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="sugar" className="mb-1 font-semi-bold">
+                    <label htmlFor="sugar" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Sugar:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#sugar"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Sugar"
+                        data-bs-content="In Chronic Kidney Disease (CKD), sugar (glucose) may be present in
+                        the urine. Normally, the kidneys filter out excess glucose from the
+                        blood and excrete it in the urine."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -518,9 +593,25 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="redBloodCells"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Red Blood Cells:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#red_blood_cells"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Red Blood Cells"
+                        data-bs-content="The normal range of red blood cells in adults is between 4.5 and 5.5
+                        million cells per microliter for men and between 4.0 and 5.0 million
+                        cells per microliter for women."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="redBloodCells"
@@ -537,8 +628,23 @@ export default function ChronicKidneyDisease() {
                     </select>
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="pusCell" className="mb-1 font-semi-bold">
+                    <label htmlFor="pusCell" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Pus Cell:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#pus_cell"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Pus Cell"
+                        data-bs-content="The normal range for pus cells in urine is 0-5 cells per high power
+                        field (HPF)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="pusCell"
@@ -560,9 +666,26 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="pusCellClumps"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Pus Cell Clumps:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#pus_cell_clumps"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Pus Cell Clumps"
+                        data-bs-content="Pus cell clumps refer to the clumping together of white blood cells,
+                        also known as pus cells, in urine. This can be a sign of kidney
+                        inflammation or infection, which can be a complication of chronic
+                        kidney disease."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="pusCellClumps"
@@ -579,8 +702,26 @@ export default function ChronicKidneyDisease() {
                     </select>
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="bacteria" className="mb-1 font-semi-bold">
+                    <label htmlFor="bacteria" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Bacteria:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#bacteria"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Bacteria"
+                        data-bs-content="Bacteria is not normally present in urine. Its presence in the urine
+                        is a sign of infection. In chronic kidney disease (CKD), the risk of
+                        developing a urinary tract infection (UTI) increases due to urinary
+                        stasis, which occurs when urine does not completely empty from the
+                        bladder."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="bacteria"
@@ -599,9 +740,26 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="bloodGlucoseRandom"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Blood Glucose Random:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#blood_glucose"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Blood Glucose Random"
+                        data-bs-content="The normal range for blood glucose random is between 70-140 mg/dL.
+                        However, in chronic kidney disease, the target blood glucose level
+                        may be different depending on the severity of the condition and the
+                        individual patient's needs."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -617,8 +775,25 @@ export default function ChronicKidneyDisease() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="bloodUrea" className="mb-1 font-semi-bold">
+                    <label htmlFor="bloodUrea" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Blood Urea:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#blood_urea"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Blood Urea"
+                        data-bs-content="Blood urea is a laboratory test that measures the amount of urea
+                        nitrogen in the blood, which is a waste product generated during
+                        protein metabolism in the liver. The normal range of blood urea is between 7 and 20 mg/dL (milligrams
+                          per deciliter) for adults, but in CKD, the levels can be higher."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -633,9 +808,25 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="serumCreatinine"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Serum Creatinine:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#serum_creatinine"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Serum Creatinine"
+                        data-bs-content="The normal range of serum creatinine can vary depending on age,
+                        gender, and muscle mass, but generally, it is around 0.6-1.2 mg/dL
+                        for men and 0.5-1.1 mg/dL for women."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -648,8 +839,24 @@ export default function ChronicKidneyDisease() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="sodium" className="mb-1 font-semi-bold">
+                    <label htmlFor="sodium" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Sodium:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#sodium"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Sodium"
+                        data-bs-content="The normal range of sodium in the blood is typically between 135-145
+                        milliequivalents per liter (mEq/L). In CKD, the sodium level may
+                        become elevated (hypernatremia), with levels above 145 mEq/L."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -665,8 +872,27 @@ export default function ChronicKidneyDisease() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="potassium" className="mb-1 font-semi-bold">
+                    <label htmlFor="potassium" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Potassium:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#potassium"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Potassium"
+                        data-bs-content="The normal range for potassium in the blood is between 3.5 and 5.0
+                        millimoles per liter (mmol/L). In chronic kidney disease, potassium
+                        levels may increase, and the normal range may vary depending on the
+                        stage of the disease and the individual's treatment plan. Generally,
+                        a potassium level above 5.5 mmol/L is considered high and requires
+                        medical attention."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -679,8 +905,24 @@ export default function ChronicKidneyDisease() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="hemoglobin" className="mb-1 font-semi-bold">
+                    <label htmlFor="hemoglobin" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Hemoglobin:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#hemoglobin"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Hemoglobin"
+                        data-bs-content="The normal range for hemoglobin varies depending on age and gender,
+                        but in general, the normal range for adult males is 13.5-17.5 g/dL
+                        and for adult females is 12.0-15.5 g/dL."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -695,9 +937,26 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="packedCellVolume"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Packed Cell Volume:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#packed_cell_volume"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Packed Cell Volume"
+                        data-bs-content="The normal range of PCV is 36% to 46% for women and 41% to 53% for
+                        men. In CKD, the PCV levels may decrease due to the decreased
+                        production of erythropoietin, which is a hormone produced by the
+                        kidneys that stimulates the bone marrow to produce red blood cells."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -715,9 +974,26 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="whiteBloodCellCount"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       White Blood Cell Count:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#white_blood_cell_count"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="White Blood Cell Count"
+                        data-bs-content="In chronic kidney disease, white blood cell count can vary depending
+                        on the underlying cause and other factors. The normal range of white
+                        blood cell count is between 4,000 and 11,000 cells per microliter of
+                        blood."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -732,9 +1008,24 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="redBloodCellCount"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Red Blood Cell Count:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#red_blood_cell_count"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Red Blood Cell Count"
+                        data-bs-content="Red blood cell count, also known as erythrocyte count, is a measure
+                        of the number of red blood cells in a given volume of blood."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -749,9 +1040,25 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="hypertension"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Hypertension:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#hypertension"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Hypertension"
+                        data-bs-content="Hypertension, or high blood pressure, is a common complication of
+                        chronic kidney disease (CKD). It can cause further damage to the
+                        kidneys and increase the risk of cardiovascular disease."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="hypertension"
@@ -773,9 +1080,25 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="diabetesMellitus"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Diabetes Mellitus:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#diabetes_mellitus"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Diabetes Mellitus"
+                        data-bs-content="Diabetes Mellitus is a medical condition characterized by high blood
+                        sugar levels due to the body's inability to produce or use insulin
+                        effectively."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="diabetesMellitus"
@@ -794,9 +1117,26 @@ export default function ChronicKidneyDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="coronaryArteryDisease"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Coronary Artery Disease:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#cad"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Coronary Artery Disease (CAD)"
+                        data-bs-content="Chronic Kidney Disease (CKD) can increase the risk of developing
+                        coronary artery disease (CAD), which is a condition where the blood
+                        vessels that supply the heart muscle with oxygen and nutrients
+                        become narrow or blocked."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="coronaryArteryDisease"
@@ -813,8 +1153,26 @@ export default function ChronicKidneyDisease() {
                     </select>
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="appetite" className="mb-1 font-semi-bold">
+                    <label htmlFor="appetite" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Appetite:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#appetite"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Appetite"
+                        data-bs-content="In chronic kidney disease, appetite can be affected due to
+                        various reasons such as high levels of waste products in the blood,
+                        hormonal imbalances, medications, and other factors. A common
+                        symptom of CKD is a loss of appetite, which can lead to malnutrition
+                        and weight loss."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="appetite"
@@ -834,8 +1192,23 @@ export default function ChronicKidneyDisease() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="pedalEdema" className="mb-1 font-semi-bold">
+                    <label htmlFor="pedalEdema" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Pedal Edema:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#pedal_edema"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Pedal Edema"
+                        data-bs-content="Pedal edema is a condition where there is swelling in the feet and
+                        ankles due to the accumulation of fluid. The severity of pedal edema can be graded on a scale of 0 to 4."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="pedalEdema"
@@ -852,8 +1225,24 @@ export default function ChronicKidneyDisease() {
                     </select>
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="anemia" className="mb-1 font-semi-bold">
+                    <label htmlFor="anemia" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Anemia:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/chronic-kidney-disease#anemia"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Anemia"
+                        data-bs-content="Anemia is a common complication in Chronic Kidney Disease (CKD) that
+                        occurs due to a decrease in the number of red blood cells or
+                        hemoglobin levels in the blood."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="anemia"

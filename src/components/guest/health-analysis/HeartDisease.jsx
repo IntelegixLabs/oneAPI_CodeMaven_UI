@@ -5,6 +5,7 @@ import { sleep } from "./../../../general-helpers.js";
 import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
+import { Popover } from "bootstrap";
 
 export default function HeartDisease() {
   const DB = "heartDiseasePatientsDB";
@@ -38,8 +39,17 @@ export default function HeartDisease() {
 
   useEffect(() => {
     index();
+    // Popover on hover i-button (info button) release disease parameter info
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+
+    [...popoverTriggerList].map(
+      (popoverTriggerEl) => new Popover(popoverTriggerEl)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   const index = () => {
     let patientsData = JSON.parse(window.localStorage.getItem(DB));
@@ -362,9 +372,27 @@ export default function HeartDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="chestPainType"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Chest Pain Type: <span className="text-danger">*</span>
+                      <div>
+                        Chest Pain Type: <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#chest_pain_type"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Chest Pain Type"
+                        data-bs-content="Chest pain type is one of the features that can be used to diagnose
+                        heart disease. There are four types of chest pain that are
+                        associated with heart disease: Typical angina, Atypical angina, Non-anginal pain, Asymptomatic etc."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="chestPainType"
@@ -388,10 +416,28 @@ export default function HeartDisease() {
                   <div className="col-md-5">
                     <label
                       htmlFor="restingBloodPressure"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Resting Blood Pressure:{" "}
-                      <span className="text-danger">*</span>
+                      <div>
+                        Resting Blood Pressure:{" "}
+                        <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#rbp"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Resting Blood Pressure"
+                        data-bs-content="A normal RBP reading is generally considered to be below 120/80
+                        mmHg. High RBP can indicate hypertension or other cardiovascular
+                        problems."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -406,9 +452,28 @@ export default function HeartDisease() {
                   <div className="col-md-5">
                     <label
                       htmlFor="serumCholestoral"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Serum Cholestoral: <span className="text-danger">*</span>
+                      <div>
+                        Serum Cholestoral: <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#serum_cholestoral"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Serum Cholestoral"
+                        data-bs-content="Serum cholesterol is a type of fat found in the blood. In the
+                        context of heart disease, high levels of serum cholesterol are
+                        associated with an increased risk of developing heart disease and
+                        other cardiovascular problems."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -426,10 +491,28 @@ export default function HeartDisease() {
                   <div className="col-md-5">
                     <label
                       htmlFor="fastingBloodSugar"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Fasting Blood Sugar:{" "}
-                      <span className="text-danger">*</span>
+                      <div>
+                        Fasting Blood Sugar:{" "}
+                        <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#fbs"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Fasting Blood Sugar"
+                        data-bs-content="High levels of fasting blood sugar are associated with an increased
+                        risk of developing diabetes, which in turn can increase the risk of
+                        heart disease."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="fastingBloodSugar"
@@ -451,10 +534,28 @@ export default function HeartDisease() {
                   <div className="col-md-7">
                     <label
                       htmlFor="restingElectrocardiographicResults"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Resting Electrocardiographic:{" "}
-                      <span className="text-danger">*</span>
+                      <div>
+                        Resting Electrocardiographic:{" "}
+                        <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#ecg"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Resting Electrocardiographic (ECG)"
+                        data-bs-content="Resting Electrocardiographic (ECG) in heart disease refers to the
+                        electrical activity of the heart recorded while the patient is at
+                        rest."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="restingElectrocardiographicResults"
@@ -480,9 +581,29 @@ export default function HeartDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="maximumHeartRateAchieved"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Maximum Heart Rate: <span className="text-danger">*</span>
+                      <div>
+                        Maximum Heart Rate: 
+                        <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#mhr"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Maximum Heart Rate"
+                        data-bs-content="A general estimate for Maximum Heart Rate can be calculated by
+                        subtracting a person's age from 220. For example, the Maximum Heart
+                        Rate for a 30-year-old would be approximately 190 beats per minute
+                        (220 - 30)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -497,10 +618,28 @@ export default function HeartDisease() {
                   <div className="col-md-6">
                     <label
                       htmlFor="exerciseInducedAngina"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
-                      Exercise Induced Angina:{" "}
-                      <span className="text-danger">*</span>
+                      <div>
+                        Exercise Induced Angina:{" "}
+                        <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#eia"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Exercise Induced Angina"
+                        data-bs-content="Exercise-induced angina is a symptom of heart disease characterized
+                        by chest pain or discomfort that occurs during physical activity or
+                        exertion."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="exerciseInducedAngina"
@@ -520,8 +659,28 @@ export default function HeartDisease() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="oldpeak" className="mb-1 font-semi-bold">
+                    <label 
+                    htmlFor="oldpeak" 
+                    className="mb-1 font-semi-bold d-flex justify-content-between">
+                      <div>
                       Old Peak: <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#old_peak"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Old Peak"
+                        data-bs-content="Old Peak is a term used to describe a decrease in ST segment during
+                        exercise compared to baseline, as measured by an electrocardiogram
+                        (ECG)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -534,8 +693,27 @@ export default function HeartDisease() {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="slope" className="mb-1 font-semi-bold">
+                    <label htmlFor="slope"
+                    className="mb-1 font-semi-bold d-flex justify-content-between">
+                      <div>
                       Slope: <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#slope"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Slope"
+                        data-bs-content="The slope of the ST segment can provide information
+                        about the blood supply to the heart and the presence of coronary
+                        artery disease."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="slope"
@@ -558,10 +736,28 @@ export default function HeartDisease() {
                   <div className="col-md-6">
                     <label
                       htmlFor="numberOfMajorVessels"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
+                      <div>
                       Number of Major Vessels:{" "}
                       <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#major_vassels"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Number of Major Vessels"
+                        data-bs-content="High levels of fasting blood sugar are associated with an increased
+                        risk of developing diabetes, which in turn can increase the risk of
+                        heart disease."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="numberOfMajorVessels"
@@ -579,8 +775,26 @@ export default function HeartDisease() {
                     </select>
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="thal" className="mb-1 font-semi-bold">
-                      Thal: <span className="text-danger">*</span>
+                    <label htmlFor="thal"
+                    className="mb-1 font-semi-bold d-flex justify-content-between">
+                      <div>
+                        Thal: <span className="text-danger">*</span>
+                      </div>
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/heart-disease#thal"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Fasting Blood Sugar"
+                        data-bs-content="Thal or Thalassemia is a genetic blood disorder that affects the
+                        production of hemoglobin in the body."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <select
                       id="thal"

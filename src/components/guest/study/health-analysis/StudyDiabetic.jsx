@@ -1,10 +1,27 @@
+import { useEffect } from "react";
 import DiabeticDiagram from "../../../../assets/images/Diabetes.jpeg";
 import { Link } from "react-router-dom";
 
 export default function StudyDiabetic() {
+  useEffect(() => {
+    let hash = window.location.hash;
+
+    if (hash) {
+      let elem = document.getElementById(hash.slice(1));
+
+      if (elem) {
+        elem.setAttribute("style", "scroll-margin-top: 80px");
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="mt-4 mb-5 container animated fadeInRight">
-      <h1 class="font-bold">Diabetic</h1>
+      <h1 className="font-bold">Diabetic</h1>
       <div className="row">
         <div className="col-md-10">
           <p>
@@ -46,7 +63,9 @@ export default function StudyDiabetic() {
 
       <div className="mt-5 row">
         <div className="col-md-8">
-          <h3 className="mt-5">Pregnancies</h3>
+          <h3 id="pregnancies" className="mt-5">
+            Pregnancies
+          </h3>
           <p>
             In the context of diabetic disease, "Pregnancies" typically refers
             to the number of times a woman has been pregnant. It is a variable
@@ -65,7 +84,7 @@ export default function StudyDiabetic() {
             was found to be around 3.8.
           </p>
 
-          <h3 className="mt-5">Glucose</h3>
+          <h3 id="glucose" className="mt-5">Glucose</h3>
           <p>
             Glucose is a type of sugar that is present in the blood and used by
             the body for energy. In the context of diabetes, glucose levels can
@@ -112,7 +131,7 @@ export default function StudyDiabetic() {
             healthy range.
           </p>
 
-          <h3 className="mt-5">Blood Pressure</h3>
+          <h3 id="blood-pressure" className="mt-5">Blood Pressure</h3>
           <p>
             Blood pressure refers to the force of blood against the walls of
             arteries as it circulates through the body. In the context of
@@ -135,7 +154,7 @@ export default function StudyDiabetic() {
             determined in consultation with a healthcare provider.
           </p>
 
-          <h3 className="mt-5">Skin Thickness</h3>
+          <h3 id="skin-thickness" className="mt-5">Skin Thickness</h3>
           <p>
             Skin thickness in diabetic disease refers to the thickness of the
             skin in certain areas of the body. In diabetes, skin thickness is
@@ -156,7 +175,7 @@ export default function StudyDiabetic() {
             also vary depending on the specific location of the measurement.
           </p>
 
-          <h3 className="mt-5">Insulin</h3>
+          <h3 id="insulin" className="mt-5">Insulin</h3>
           <p>
             Insulin is a hormone produced by the pancreas that helps regulate
             the levels of glucose (sugar) in the blood. In diabetic disease, the
@@ -169,7 +188,7 @@ export default function StudyDiabetic() {
             medications to help manage their blood sugar levels.
           </p>
 
-          <h3 className="mt-5">BMI</h3>
+          <h3 id="bmi" className="mt-5">BMI</h3>
           <p>
             BMI (Body Mass Index) is a measure of body fat based on height and
             weight. It is a commonly used indicator of whether a person is
@@ -189,7 +208,7 @@ export default function StudyDiabetic() {
             circumference, muscle mass, and overall health status.
           </p>
 
-          <h3 className="mt-5">Diabetes Pedigree Function</h3>
+          <h3 id="diabetes-pedigree-function" className="mt-5">Diabetes Pedigree Function</h3>
           <p>
             The Diabetes Pedigree Function (DPF) is a score that provides
             information about the risk of developing diabetes based on a

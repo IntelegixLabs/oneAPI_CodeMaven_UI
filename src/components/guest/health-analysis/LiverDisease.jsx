@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { sleep } from "./../../../general-helpers.js";
-
+import { Popover } from "bootstrap";
 import ApiML from "../../../Api/ApiML.js";
 import NoPatientDataFound from "../../common/misc/NoPatientDataFound.jsx";
 import ScreenLoader from "../../common/ScreenLoader.jsx";
@@ -32,6 +32,15 @@ export default function LiverDisease() {
 
   useEffect(() => {
     index();
+
+    // Popover on hover i-button (info button) release disease parameter info
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+
+    [...popoverTriggerList].map(
+      (popoverTriggerEl) => new Popover(popoverTriggerEl)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -337,9 +346,23 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="totalBilirubin"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Pregnancies:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#pregnancies"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Pregnancies"
+                        data-bs-content="refers to the number of times a woman has been pregnant, potentially impacting the risk or severity of diabetes, with a typical range of 0 to 17 and an average of around 3.8 in diabetic patients."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -354,9 +377,24 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="directBilirubin"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Glucose:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#glucose"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Glucose"
+                        data-bs-content="Normal fasting blood glucose levels for adults are typically
+                        between 70 and 99 mg/dL (3.9 to 5.5 mmol/L)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -371,9 +409,24 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="alkalinePhosphotase"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Alkaline Phosphotase:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#alp"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Alkaline Phosphotase"
+                        data-bs-content="In general, for adults, the normal range is between 20 and 140
+                        international units per liter (IU/L)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -391,9 +444,26 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="alamineAminotransferase"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Alamine Aminotransferase:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#alt"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Alamine Aminotransferase"
+                        data-bs-content="Alamine aminotransferase (ALT) is an enzyme found primarily in the
+                        liver cells. It is also known as serum glutamic-pyruvic transaminase
+                        (SGPT). ALT is released into the bloodstream when there is damage or
+                        injury to the liver cells."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -408,9 +478,24 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="aspartateAminotransferase"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Aspartate Aminotransferase:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#ast"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Aspartate Aminotransferase"
+                        data-bs-content="The normal range of Aspartate Aminotransferase (AST) in the blood is
+                        generally between 10 to 40 units per liter (U/L)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -425,9 +510,24 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="totalProtiens"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Total Protiens:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#total_protiens"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Total Protiens"
+                        data-bs-content="In liver disease, the normal range for total protein levels in the
+                        blood is 6.0 to 8.3 grams per deciliter (g/dL)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -443,8 +543,25 @@ export default function LiverDisease() {
 
                 <div className="row mt-3">
                   <div className="col-md-4">
-                    <label htmlFor="albumin" className="mb-1 font-semi-bold">
+                    <label htmlFor="albumin" className="mb-1 font-semi-bold d-flex justify-content-between">
                       Albumin:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#albumin"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Albumin"
+                        data-bs-content="Albumin is a protein produced by the liver, and its levels can be
+                        used to assess liver function. In liver disease, the albumin levels
+                        may be abnormal. The normal range of albumin in the blood is
+                        typically between 3.4 and 5.4 grams per deciliter (g/dL)."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
@@ -459,9 +576,25 @@ export default function LiverDisease() {
                   <div className="col-md-4">
                     <label
                       htmlFor="albuminAndGlobulinRatio"
-                      className="mb-1 font-semi-bold"
+                      className="mb-1 font-semi-bold d-flex justify-content-between"
                     >
                       Albumin and Globulin Ratio:
+                      <Link
+                        className="mt-1 me-2"
+                        to="/study/health-analysis/liver-disease#agr"
+                        target="_blank"
+                        data-bs-animation="false"
+                        data-bs-placement="top"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover"
+                        data-bs-title="Albumin and Globulin Ratio (AGR)"
+                        data-bs-content="Typically, a normal AGR value falls between 1.0 and 2.5, with higher
+                        values indicating a higher concentration of albumin relative to
+                        globulin."
+                        tabIndex="0"
+                      >
+                        <i className="fa-regular fa-circle-question"></i>
+                      </Link>
                     </label>
                     <input
                       type="number"
