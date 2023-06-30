@@ -3,7 +3,7 @@
 }
 
 .modal-backdrop {
-  backdrop-filter: blur(4px) !important;
+  backdrop-filter: blur(3px) !important;
   background-color: rgba(0, 0, 0, 0.4);
 }
 

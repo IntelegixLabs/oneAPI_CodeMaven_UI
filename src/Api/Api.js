@@ -1,17 +1,30 @@
 import axios from "axios";
 
-const Api = axios.create();
+const Api = axios.create({
+  baseURL: process.env.REACT_APP_API,
+});
 
-Api.defaults.baseURL = process.env.REACT_APP_API_URL;
+Api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("ACCESS_TOKEN");
+  config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
 
-Api.defaults.headers = {
-  "Content-Type": "application/json",
-  Accept: "application/json",
-};
+Api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    const { response } = error;
+    if (response.status === 401) {
+      localStorage.removeItem("ACCESS_TOKEN");
+      // window.location.reload();
+    } else if (response.status === 404) {
+      //Show not found
+    }
 
-//All request will wait 5 seconds before timeout
-Api.defaults.timeout = 5000;
-
-Api.defaults.withCredentials = true;
+    throw error;
+  }
+);
 
 export default Api;

@@ -26,7 +26,7 @@ export default function ScreenLoader() {
           width="124"
           ariaLabel="dna-loading"
           wrapperStyle={{ position: "absolute", top: "38%", left: "41%", backgroundColor: "#ffffff", borderRadius: "8px", padding: "20px" }}
-          wrapperClass="dna-wrapper"
+          wrapperclassName="dna-wrapper"
         />
       </div>
     </React.Fragment>
